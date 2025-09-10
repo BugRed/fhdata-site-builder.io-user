@@ -23,7 +23,7 @@ const AboutSection = () => {
         {/* Trust Section - Grid 4x3 */}
         <div className="text-center">
           <h3 className="text-2xl font-bold text-foreground mb-8">QUEM CONFIA</h3>
-          <div className="bg-accent rounded-lg p-8 shadow-card">
+          <div className="rounded-lg p-8 shadow-card">
             <div className="grid grid-cols-4 gap-6 items-center opacity-60">
               {/* Grid 4x3 - 12 clientes total */}
               {Array.from({ length: 12 }, (_, index) => (

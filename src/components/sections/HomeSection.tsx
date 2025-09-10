@@ -41,7 +41,7 @@ const HomeSection = () => {
 
             <Button
               variant="hero"
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-full text-base"
+              className="group font-bold px-8 py-4 rounded-full text-base"
             >
               Saiba mais
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

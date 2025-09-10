@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Menu, X } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 /**
@@ -72,7 +71,7 @@ const Header = () => {
                 onMouseEnter={() => setIsSearchOpen(true)}
                 onMouseLeave={() => setIsSearchOpen(false)}
               >
-                <Search className="w-5 h-5" />
+                <span className="material-symbols-light text-xl">search</span>
               </button>
 
               {/* Search Dropdown */}
@@ -121,7 +120,7 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-foreground hover:text-primary"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <span className="material-symbols-light text-2xl">close</span> : <span className="material-symbols-light text-2xl">menu</span>}
             </button>
           </div>
         </div>
@@ -153,7 +152,7 @@ const Header = () => {
                     className="flex-1 bg-background border-border text-foreground"
                   />
                   <Button type="submit" variant="default" size="sm">
-                    <Search className="w-4 h-4" />
+                    <span className="material-symbols-light text-lg">search</span>
                   </Button>
                 </form>
 

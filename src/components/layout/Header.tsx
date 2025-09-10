@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Menu, X } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 /**
@@ -34,20 +33,21 @@ const Header = () => {
     <header className="bg-background/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 min-h-[90px]">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <div className="rounded-md flex items-center justify-center">
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/688e6eccb8cc47deb53560c4cf3f762f2748f03f?width=80"
-                alt="FH Data Logo"
-                className="w-10 h-12"
-              />
+          {/* Left Side: Logo and Navigation */}
+          <div className="flex items-center space-x-12">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <div className="rounded-md flex items-center justify-center">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/688e6eccb8cc47deb53560c4cf3f762f2748f03f?width=80"
+                  alt="FH Data Logo"
+                  className="w-10 h-12"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-12">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-12">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -60,7 +60,10 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
+          </div>
 
+          {/* Right Side: Search and Contact */}
+          <div className="hidden md:flex items-center space-x-8">
             {/* Search Icon with Hover Functionality */}
             <div className="relative">
               <button
@@ -68,7 +71,7 @@ const Header = () => {
                 onMouseEnter={() => setIsSearchOpen(true)}
                 onMouseLeave={() => setIsSearchOpen(false)}
               >
-                <Search className="w-5 h-5" />
+                <span className="material-symbols-light text-xl">search</span>
               </button>
 
               {/* Search Dropdown */}
@@ -117,7 +120,7 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-foreground hover:text-primary"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <span className="material-symbols-light text-2xl">close</span> : <span className="material-symbols-light text-2xl">menu</span>}
             </button>
           </div>
         </div>
@@ -149,7 +152,7 @@ const Header = () => {
                     className="flex-1 bg-background border-border text-foreground"
                   />
                   <Button type="submit" variant="default" size="sm">
-                    <Search className="w-4 h-4" />
+                    <span className="material-symbols-light text-lg">search</span>
                   </Button>
                 </form>
 

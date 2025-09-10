@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border/10">
+    <header className="bg-transparent sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 min-h-[90px]">
           {/* Left Side: Logo and Navigation */}

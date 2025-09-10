@@ -94,7 +94,7 @@ const Header = () => {
                       type="submit"
                       variant="default"
                       size="sm"
-                      className="w-full bg-primary hover:bg-primary/90"
+                      className="w-full"
                     >
                       Buscar
                     </Button>
@@ -107,7 +107,7 @@ const Header = () => {
               <Button
                 variant="default"
                 size="sm"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-full"
+                className="font-bold px-6 py-3 rounded-full"
               >
                 Entre em contato
               </Button>

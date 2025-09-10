@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ArrowRight, ArrowLeft, Quote } from 'lucide-react';
 
 /**
  * Testimonials section - Customer testimonials carousel
@@ -66,12 +65,14 @@ const TestimonialsSection = () => {
         ${position === 'center' ? 'shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-8' : 'p-6'}
       `}>
         {/* Quote Icon */}
-        <Quote
+        <span
           className={`
-            absolute top-4 right-6 flex-shrink-0 text-primary
-            ${position === 'center' ? 'w-6 h-6' : 'w-5 h-5'}
+            material-symbols-light absolute top-4 right-6 flex-shrink-0 text-primary
+            ${position === 'center' ? 'text-2xl' : 'text-xl'}
           `}
-        />
+        >
+          format_quote
+        </span>
 
         {/* Testimonial Content */}
         <div className="space-y-4">
@@ -167,7 +168,7 @@ const TestimonialsSection = () => {
               filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.30)) drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15))'
             }}
           >
-            <ArrowLeft className="w-5 h-5" />
+            <span className="material-symbols-light text-xl">arrow_back</span>
           </button>
 
           <button
@@ -178,7 +179,7 @@ const TestimonialsSection = () => {
               filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.30)) drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15))'
             }}
           >
-            <ArrowRight className="w-5 h-5" />
+            <span className="material-symbols-light text-xl">arrow_forward</span>
           </button>
 
           {/* Dots Indicator */}

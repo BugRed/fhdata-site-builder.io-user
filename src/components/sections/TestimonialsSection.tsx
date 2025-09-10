@@ -12,21 +12,21 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: 'Nome Sobrenome',
-      position: 'Profissão, Empresa',
-      testimonial: '"Depoimento que alguém escreveu."',
+      name: 'Maria Silva',
+      position: 'Diretora de TI, TechCorp',
+      testimonial: '"A FH Data transformou nossa análise de dados. Agora temos insights em tempo real que impulsionaram nosso crescimento em 40%."',
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Nome Sobrenome',
-      position: 'Profissão, Empresa',
-      testimonial: '"Depoimento que alguém escreveu."',
+      name: 'João Santos',
+      position: 'CEO, StartupInovadora',
+      testimonial: '"Implementar IA com a FH Data foi um divisor de águas. Nossa eficiência operacional aumentou drasticamente."',
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Nome Sobrenome',
-      position: 'Profissão, Empresa',
-      testimonial: '"Depoimento que alguém escreveu."',
+      name: 'Ana Costa',
+      position: 'Gerente de Analytics, BigCompany',
+      testimonial: '"O suporte da FH Data é excepcional. Eles não apenas fornecem dados, mas insights acionáveis que fazem a diferença."',
       image: '/api/placeholder/80/80'
     }
   ];
@@ -56,51 +56,63 @@ const TestimonialsSection = () => {
     <div
       className={`
         flex-shrink-0 transition-all duration-500 ease-in-out
-        ${position === 'center' ? 'w-[592px] h-[360px] z-20' : 'w-[384px] h-[330px] z-10'}
-        ${!isActive ? 'filter blur-[2px]' : ''}
-        ${position === 'left' ? '-mr-32' : position === 'right' ? '-ml-32' : ''}
+        ${position === 'center' ? 'w-[400px] h-[280px] z-20' : 'w-[300px] h-[250px] z-10'}
+        ${!isActive ? 'filter blur-[2px] opacity-60' : ''}
+        ${position === 'left' ? '-mr-20' : position === 'right' ? '-ml-20' : ''}
       `}
     >
       <div className={`
-        bg-logistics-bg rounded-[40px] shadow-card p-10 w-full h-full relative
-        ${position === 'center' ? 'shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)]' : ''}
+        bg-logistics-bg rounded-[30px] shadow-card w-full h-full relative
+        ${position === 'center' ? 'shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-8' : 'p-6'}
       `}>
         {/* Quote Icon */}
         <Quote
           className={`
-            absolute top-6 right-8 flex-shrink-0 text-primary
-            ${position === 'center' ? 'w-8 h-8' : 'w-8 h-8'}
+            absolute top-4 right-6 flex-shrink-0 text-primary
+            ${position === 'center' ? 'w-6 h-6' : 'w-5 h-5'}
           `}
         />
 
         {/* Testimonial Content */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Testimonial Text */}
           <blockquote className={`
             text-yellow-100 leading-relaxed
-            ${position === 'center' ? 'text-lg' : 'text-lg'}
+            ${position === 'center' ? 'text-base' : 'text-sm'}
           `}>
             {testimonial.testimonial}
           </blockquote>
 
           {/* Customer Info */}
           <div className={`
-            flex items-center space-x-4
-            ${position === 'center' ? 'pt-8' : 'pt-6'}
+            flex items-center space-x-3
+            ${position === 'center' ? 'pt-4' : 'pt-2'}
           `}>
             {/* Customer Photo */}
-            <div className="w-14 h-14 bg-muted rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-muted-foreground font-semibold">
+            <div className={`
+              bg-muted rounded-full flex items-center justify-center flex-shrink-0
+              ${position === 'center' ? 'w-12 h-12' : 'w-10 h-10'}
+            `}>
+              <span className={`
+                text-muted-foreground font-semibold
+                ${position === 'center' ? 'text-base' : 'text-sm'}
+              `}>
                 {testimonial.name.charAt(0)}
               </span>
             </div>
 
             {/* Customer Info */}
             <div>
-              <h3 className="text-white text-lg font-bold">
+              <h3 className={`
+                text-white font-bold
+                ${position === 'center' ? 'text-base' : 'text-sm'}
+              `}>
                 {testimonial.name}
               </h3>
-              <p className="text-white text-base">
+              <p className={`
+                text-white
+                ${position === 'center' ? 'text-sm' : 'text-xs'}
+              `}>
                 {testimonial.position}
               </p>
             </div>
@@ -150,23 +162,23 @@ const TestimonialsSection = () => {
           <button
             onClick={prevSlide}
             disabled={isTransitioning}
-            className="absolute left-4 lg:left-64 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-lg transition-colors disabled:opacity-50"
+            className="absolute left-4 lg:left-32 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             style={{
               filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.30)) drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15))'
             }}
           >
-            <ArrowLeft className="w-6 h-6" />
+            <ArrowLeft className="w-5 h-5" />
           </button>
 
           <button
             onClick={nextSlide}
             disabled={isTransitioning}
-            className="absolute right-4 lg:right-64 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-lg transition-colors disabled:opacity-50"
+            className="absolute right-4 lg:right-32 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             style={{
               filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.30)) drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15))'
             }}
           >
-            <ArrowRight className="w-6 h-6" />
+            <ArrowRight className="w-5 h-5" />
           </button>
 
           {/* Dots Indicator */}

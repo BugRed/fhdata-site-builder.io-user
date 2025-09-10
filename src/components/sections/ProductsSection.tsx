@@ -101,7 +101,7 @@ const ProductsSection = () => {
         <div className="flex justify-center">
           <Button
             variant="hero"
-            className="group bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-full"
+            className="group font-bold px-8 py-4 rounded-full"
           >
             QUERO SABER MAIS
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

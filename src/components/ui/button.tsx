@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-card font-semibold px-8 py-6 text-base",
-        floating: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-card rounded-full px-6 py-3 font-medium",
+        default: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-soft transition-all duration-300",
+        hero: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card font-semibold px-8 py-6 text-base transition-all duration-300",
+        floating: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card rounded-full px-6 py-3 font-medium transition-all duration-300",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        contact: "bg-primary text-primary-foreground hover:bg-primary-dark shadow-soft font-semibold",
+        contact: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-soft font-semibold transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

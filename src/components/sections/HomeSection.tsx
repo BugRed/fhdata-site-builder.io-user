@@ -9,7 +9,7 @@ import { MagicButton } from '../ui/magicbutton';
  */
 const HomeSection = () => {
   return (
-    <section id="home" className="relative min-h-screen bg-background">
+    <section id="home" className="relative min-h-screen bg-background -mt-[122px] pt-[122px]">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MapPin, Phone, Mail, Instagram, Copyright } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Copyright, Facebook, Twitter } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 /**
@@ -175,12 +175,36 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
+                        {/* Social Media & Support */}
             <div className="space-y-6">
-              <h3 className="text-white text-lg font-bold">Redes Sociais</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="text-primary hover:text-primary/80 transition-colors">
-                  <Instagram className="w-6 h-6" />
-                </a>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Redes Sociais</h3>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Instagram className="w-6 h-6" />
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Twitter className="w-6 h-6" />
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-foreground mb-3">ATENDIMENTO</h4>
+                <div className="flex flex-col space-y-2">
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    Terms of Use
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    FAQ
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    Report Issues
+                  </a>
+                </div>
               </div>
             </div>
           </div>

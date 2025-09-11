@@ -222,3 +222,39 @@ All colors MUST be HSL for consistency and theming.
     -webkit-font-smoothing: antialiased;
   }
 }
+
+/* Global responsive and overflow guards */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body, #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  html {
+    font-size: clamp(14px, 0.9vw + 10px, 18px);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  img, video, canvas, svg, iframe {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input, select, textarea, button {
+    max-width: 100%;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Prevent flex/grid children overflow */
+  .flex > * { min-width: 0; }
+  .grid > * { min-width: 0; }
+}

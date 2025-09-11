@@ -248,7 +248,7 @@ const TestimonialsSection = () => {
           <Link to="contact-form" smooth={true} duration={500}>
           <Button
           variant="hero"
-          className="group font-bold px-32 py-4 rounded-full text-base"
+          className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
         >
           Começe sua transformação
         </Button>

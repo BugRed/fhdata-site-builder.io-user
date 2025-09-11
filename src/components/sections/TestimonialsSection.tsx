@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "../ui/button";
-import { Link } from 'react-scroll';
-
+import { Link } from "react-scroll";
 
 const TestimonialsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -55,6 +54,40 @@ const TestimonialsSection = () => {
     (currentSlide - 1 + testimonials.length) % testimonials.length;
   const getNextIndex = () => (currentSlide + 1) % testimonials.length;
 
+  // Refs para touch (usando refs para não re-renderizar durante o movimento)
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartRef.current === null || touchEndRef.current === null) {
+      touchStartRef.current = null;
+      touchEndRef.current = null;
+      return;
+    }
+
+    const distance = touchStartRef.current - touchEndRef.current;
+    const minSwipeDistance = 50; // threshold em px
+
+    if (distance > minSwipeDistance) {
+      // swipe left -> next
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      // swipe right -> prev
+      prevSlide();
+    }
+
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+  };
+
   const TestimonialCard = ({
     testimonial,
     isActive,
@@ -95,7 +128,7 @@ const TestimonialsSection = () => {
         {/* Ícone de citação */}
         <span
           className={`
-            material-symbols-light absolute top-4 right-6 flex-shrink-0 text-primary
+            material-symbols-filled absolute top-4 right-6 flex-shrink-0 text-primary
             ${position === "center" ? "text-2xl" : "text-xl"}
           `}
         >
@@ -171,7 +204,7 @@ const TestimonialsSection = () => {
             <button
               onClick={prevSlide}
               disabled={isTransitioning}
-              className="absolute top-1/2 -translate-y-1/2 z-30 left-3 md:left-0 md:-translate-x-full md:ml-2.5
+              className="hidden md:absolute md:block top-1/2 -translate-y-1/2 z-30 left-3 md:left-0 md:-translate-x-full md:ml-2.5
                 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             >
               <span className="material-symbols-light text-xl">arrow_back</span>
@@ -180,7 +213,7 @@ const TestimonialsSection = () => {
             <button
               onClick={nextSlide}
               disabled={isTransitioning}
-              className="absolute top-1/2 -translate-y-1/2 z-30 right-3 md:right-0 md:translate-x-full md:mr-2.5
+              className="hidden md:absolute md:block top-1/2 -translate-y-1/2 z-30 right-3 md:right-0 md:translate-x-full md:mr-2.5
                 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             >
               <span className="material-symbols-light text-xl">
@@ -204,23 +237,35 @@ const TestimonialsSection = () => {
           </h2>
         </div>
 
-        <div className="relative flex justify-center items-center overflow-hidden">
-          <div className="flex justify-center items-center space-x-0 w-full">
-            <div className="hidden md:block">
+        {/* Container do carrossel com centralização perfeita */}
+        <div
+          className="relative w-full flex justify-center items-center"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Wrapper interno que garante o alinhamento central */}
+          <div className="relative flex items-center justify-center">
+            {/* Card da esquerda (apenas desktop) */}
+            <div className="hidden md:flex justify-center items-center">
               <TestimonialCard
                 testimonial={testimonials[getPrevIndex()]}
                 isActive={false}
                 position="left"
               />
             </div>
-            <div className="w-full">
+
+            {/* Card central - sempre centralizado */}
+            <div className="flex justify-center items-center mx-auto md:mx-0">
               <TestimonialCard
                 testimonial={testimonials[currentSlide]}
                 isActive={true}
                 position="center"
               />
             </div>
-            <div className="hidden md:block">
+
+            {/* Card da direita (apenas desktop) */}
+            <div className="hidden md:flex justify-center items-center">
               <TestimonialCard
                 testimonial={testimonials[getNextIndex()]}
                 isActive={false}
@@ -230,29 +275,43 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Indicadores */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (!isTransitioning) setCurrentSlide(index);
-              }}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? "bg-primary" : "bg-muted"
-              }`}
-            />
-          ))}
+        {/* Indicadores com instrução visual para mobile */}
+        <div className="flex flex-col items-center mt-8 space-y-3">
+          {/* Indicadores de slides */}
+          <div className="flex justify-center space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (!isTransitioning) setCurrentSlide(index);
+                }}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentSlide ? "bg-primary" : "bg-muted"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Instrução de swipe para mobile - mais visível */}
+          <div className="lg:hidden text-center">
+            <p className="text-white/80 text-sm flex items-center justify-center gap-2 bg-white/5 rounded-full px-4 py-2 backdrop-blur-sm">
+              <span className="text-base">👈</span>
+              <span className="font-medium">Deslize para navegar</span>
+              <span className="text-base">👉</span>
+            </p>
+          </div>
         </div>
+
+        {/* Botão CTA - mantido centralizado */}
         <div className="flex justify-center mt-12">
           <Link to="contact-form" smooth={true} duration={500}>
-          <Button
-          variant="hero"
-          className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
-        >
-          Começe sua transformação
-        </Button>
-        </Link>
+            <Button
+              variant="hero"
+              className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
+            >
+              Começe sua transformação
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

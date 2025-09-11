@@ -33,7 +33,7 @@ const SolutionsSection = () => {
           <div className="flex flex-col space-y-6">
             <div className="bg-primary rounded-lg shadow-card p-8 h-80 flex flex-col justify-center items-center text-center">
               <Brain className="w-20 h-20 text-primary-foreground mb-6" />
-              <h3 className="text-2xl font-bold text-primary-foreground">PREVISÃO & IA</h3>
+              <h3 className="text-2xl font-bold text-primary-foreground">Forscast HUB</h3>
             </div>
             <p className="text-muted-foreground">
               Implementamos modelos preditivos e soluções de inteligência artificial 

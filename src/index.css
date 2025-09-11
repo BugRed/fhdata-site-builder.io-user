@@ -1,4 +1,15 @@
+/* Outlined */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* Filled */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Filled:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* Rounded */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* Sharp */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
 @import url('https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -110,8 +121,28 @@ All colors MUST be HSL for consistency and theming.
   }
 }
 
+.material-symbols-filled {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* ajuste se quiser */
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 
-/* src/index.css */
+  /* Aqui está o truque: FILL=1 = preenchido */
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
 
 @font-face {
   font-family: "Avenir";

@@ -25,7 +25,7 @@ const HomeSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-500/20 via-transparent to-background"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start py-16 min-h-screen">
           {/* Left Column - Hero Text */}
           <div className="space-y-8 lg:pl-[calc((100vw-80rem)/2)] xl:pl-20 2xl:pl-[calc((100vw-80rem)/2)]">

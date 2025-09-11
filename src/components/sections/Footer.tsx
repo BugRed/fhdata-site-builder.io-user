@@ -9,6 +9,10 @@ import {
   Copyright,
   Facebook,
   Twitter,
+  Linkedin,
+  LinkedinIcon,
+  LucideLinkedin,
+  PhoneCall,
 } from "lucide-react";
 import { Link } from "react-scroll";
 
@@ -43,6 +47,7 @@ const Footer = () => {
     { name: "Soluções", to: "solucoes" },
     { name: "Cases", to: "cases" },
     { name: "Quem somos", to: "about" },
+    { name: "Produtos", to: "produtos" },
   ];
 
   return (
@@ -154,18 +159,20 @@ const Footer = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-6 h-6 text-primary flex-shrink-0" />
-                  <span className="text-white text-base">Rua xxx, xxx,xxx</span>
+                  <span className="text-white text-base">
+                    R. do Brum, 248 - Recife, PE, 50030-260
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-6 h-6 text-primary flex-shrink-0" />
                   <span className="text-white text-base">
-                    +55 (81) xxxx-xxxx
+                    +55 (81) 99133-0615
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-4 text-primary flex-shrink-0" />
                   <span className="text-white text-base">
-                    xxxxxxxx@fhdataanalysis.com.br
+                    contato@fhdataanalysis.com.br
                   </span>
                 </div>
               </div>
@@ -205,17 +212,17 @@ const Footer = () => {
                     <Instagram className="w-6 h-6" />
                   </a>
                   <a
+                    href="https://www.linkedin.com/company/fh-data-analysis"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </a>
+                  {/* <a
                     href="#"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    <Twitter className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Facebook className="w-6 h-6" />
-                  </a>
+                    <PhoneCall className="w-6 h-6" />
+                  </a> */}
                 </div>
               </div>
 

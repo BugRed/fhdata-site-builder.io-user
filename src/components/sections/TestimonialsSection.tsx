@@ -1,87 +1,102 @@
-import { useState } from 'react'
+import { useState } from "react";
+import { Button } from "../ui/button";
+import { Link } from 'react-scroll';
+
 
 const TestimonialsSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const testimonials = [
     {
-      name: 'Maria Silva',
-      position: 'Diretora de TI, TechCorp',
+      name: "Maria Silva",
+      position: "Diretora de TI, TechCorp",
       testimonial:
         '"A FH Data transformou nossa análise de dados. Agora temos insights em tempo real que impulsionaram nosso crescimento em 40%."',
-      image: '/api/placeholder/80/80',
+      image: "/api/placeholder/80/80",
     },
     {
-      name: 'João Santos',
-      position: 'CEO, StartupInovadora',
+      name: "João Santos",
+      position: "CEO, StartupInovadora",
       testimonial:
         '"Implementar IA com a FH Data foi um divisor de águas. Nossa eficiência operacional aumentou drasticamente."',
-      image: '/api/placeholder/80/80',
+      image: "/api/placeholder/80/80",
     },
     {
-      name: 'Ana Costa',
-      position: 'Gerente de Analytics, BigCompany',
+      name: "Ana Costa",
+      position: "Gerente de Analytics, BigCompany",
       testimonial:
         '"O suporte da FH Data é excepcional. Eles não apenas fornecem dados, mas insights acionáveis que fazem a diferença."',
-      image: '/api/placeholder/80/80',
+      image: "/api/placeholder/80/80",
     },
-  ]
+  ];
 
   const nextSlide = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentSlide((prev) => (prev + 1) % testimonials.length)
-      setIsTransitioning(false)
-    }, 150)
-  }
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+      setIsTransitioning(false);
+    }, 150);
+  };
 
   const prevSlide = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setTimeout(() => {
       setCurrentSlide(
-        (prev) => (prev - 1 + testimonials.length) % testimonials.length,
-      )
-      setIsTransitioning(false)
-    }, 150)
-  }
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      );
+      setIsTransitioning(false);
+    }, 150);
+  };
 
   const getPrevIndex = () =>
-    (currentSlide - 1 + testimonials.length) % testimonials.length
-  const getNextIndex = () => (currentSlide + 1) % testimonials.length
+    (currentSlide - 1 + testimonials.length) % testimonials.length;
+  const getNextIndex = () => (currentSlide + 1) % testimonials.length;
 
   const TestimonialCard = ({
     testimonial,
     isActive,
     position,
   }: {
-    testimonial: any
-    isActive: boolean
-    position: 'left' | 'center' | 'right'
+    testimonial: any;
+    isActive: boolean;
+    position: "left" | "center" | "right";
   }) => (
     <div
       className={`
         flex-shrink-0 transition-all duration-500 ease-in-out relative
-        ${position === 'center' ? 'w-full md:w-[500px] h-[250px] z-20' : 'w-[380px] h-[220px] z-10'}
-        ${!isActive ? 'blur-[2px] opacity-60' : ''}
-        ${position === 'left' ? 'md:-mr-20' : position === 'right' ? 'md:-ml-20' : ''}
+        ${
+          position === "center"
+            ? "w-full md:w-[500px] h-[250px] z-20"
+            : "w-[380px] h-[220px] z-10"
+        }
+        ${!isActive ? "blur-[2px] opacity-60" : ""}
+        ${
+          position === "left"
+            ? "md:-mr-20"
+            : position === "right"
+            ? "md:-ml-20"
+            : ""
+        }
       `}
     >
       <div
         className={`
         bg-logistics-bg rounded-[30px] shadow-card w-full h-full relative
-        ${position === 'center'
-          ? 'shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-6 md:p-8'
-          : 'p-6'}
+        ${
+          position === "center"
+            ? "shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-6 md:p-8"
+            : "p-6"
+        }
       `}
       >
         {/* Ícone de citação */}
         <span
           className={`
             material-symbols-light absolute top-4 right-6 flex-shrink-0 text-primary
-            ${position === 'center' ? 'text-2xl' : 'text-xl'}
+            ${position === "center" ? "text-2xl" : "text-xl"}
           `}
         >
           format_quote
@@ -92,7 +107,7 @@ const TestimonialsSection = () => {
           <blockquote
             className={`
             text-yellow-100 leading-relaxed
-            ${position === 'center' ? 'text-base' : 'text-sm'}
+            ${position === "center" ? "text-base" : "text-sm"}
           `}
           >
             {testimonial.testimonial}
@@ -101,14 +116,14 @@ const TestimonialsSection = () => {
           <div
             className={`
             flex items-center space-x-3
-            ${position === 'center' ? 'pt-4' : 'pt-2'}
+            ${position === "center" ? "pt-4" : "pt-2"}
           `}
           >
             {/* Foto com borda */}
             <div
               className={`
                 bg-muted rounded-full flex items-center justify-center flex-shrink-0 border border-white/80
-                ${position === 'center' ? 'w-12 h-12' : 'w-10 h-10'}
+                ${position === "center" ? "w-12 h-12" : "w-10 h-10"}
               `}
             >
               {testimonial.image ? (
@@ -121,7 +136,7 @@ const TestimonialsSection = () => {
                 <span
                   className={`
                   text-muted-foreground font-semibold
-                  ${position === 'center' ? 'text-base' : 'text-sm'}
+                  ${position === "center" ? "text-base" : "text-sm"}
                 `}
                 >
                   {testimonial.name.charAt(0)}
@@ -133,7 +148,7 @@ const TestimonialsSection = () => {
               <h3
                 className={`
                 text-white font-bold
-                ${position === 'center' ? 'text-base' : 'text-sm'}
+                ${position === "center" ? "text-base" : "text-sm"}
               `}
               >
                 {testimonial.name}
@@ -141,7 +156,7 @@ const TestimonialsSection = () => {
               <p
                 className={`
                 text-white
-                ${position === 'center' ? 'text-sm' : 'text-xs'}
+                ${position === "center" ? "text-sm" : "text-xs"}
               `}
               >
                 {testimonial.position}
@@ -151,7 +166,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Setas dentro do card central, fixadas na borda externa */}
-        {position === 'center' && (
+        {position === "center" && (
           <>
             <button
               onClick={prevSlide}
@@ -168,13 +183,15 @@ const TestimonialsSection = () => {
               className="absolute top-1/2 -translate-y-1/2 z-30 right-3 md:right-0 md:translate-x-full md:mr-2.5
                 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             >
-              <span className="material-symbols-light text-xl">arrow_forward</span>
+              <span className="material-symbols-light text-xl">
+                arrow_forward
+              </span>
             </button>
           </>
         )}
       </div>
     </div>
-  )
+  );
 
   return (
     <section className="py-20 bg-background">
@@ -219,17 +236,27 @@ const TestimonialsSection = () => {
             <button
               key={index}
               onClick={() => {
-                if (!isTransitioning) setCurrentSlide(index)
+                if (!isTransitioning) setCurrentSlide(index);
               }}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? 'bg-primary' : 'bg-muted'
+                index === currentSlide ? "bg-primary" : "bg-muted"
               }`}
             />
           ))}
         </div>
+        <div className="flex justify-center mt-12">
+          <Link to="contact-form" smooth={true} duration={500}>
+          <Button
+          variant="hero"
+          className="group font-bold px-32 py-4 rounded-full text-base"
+        >
+          Começe sua transformação
+        </Button>
+        </Link>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TestimonialsSection
+export default TestimonialsSection;

@@ -56,7 +56,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="produtos" className="py-20 bg-background">
+    <section id="produtos" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-2xl font-bold text-foreground mb-4">
@@ -95,17 +95,6 @@ const ProductsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA Button - Center */}
-        <div className="flex justify-center">
-          <Button
-            variant="hero"
-            className="group font-bold px-8 py-4 rounded-full"
-          >
-            QUERO SABER MAIS
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
         </div>
       </div>
     </section>

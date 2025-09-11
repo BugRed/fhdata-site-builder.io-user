@@ -1,8 +1,16 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { MapPin, Phone, Mail, Instagram, Copyright, Facebook, Twitter } from 'lucide-react';
-import { Link } from 'react-scroll';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Copyright,
+  Facebook,
+  Twitter,
+} from "lucide-react";
+import { Link } from "react-scroll";
 
 /**
  * Footer component with contact form and company information
@@ -11,30 +19,30 @@ import { Link } from 'react-scroll';
  */
 const Footer = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    contact: '',
-    company: ''
+    name: "",
+    email: "",
+    contact: "",
+    company: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   const navItems = [
-    { name: 'Home', to: 'home' },
-    { name: 'Soluções', to: 'solucoes' },
-    { name: 'Cases', to: 'cases' },
-    { name: 'Quem somos', to: 'about' },
+    { name: "Home", to: "home" },
+    { name: "Soluções", to: "solucoes" },
+    { name: "Cases", to: "cases" },
+    { name: "Quem somos", to: "about" },
   ];
 
   return (
@@ -44,10 +52,11 @@ const Footer = () => {
         id="contact-form"
         className="relative py-20 rounded-3xl mx-4 sm:mx-6 lg:mx-8 mb-16"
         style={{
-          backgroundImage: "url('https://api.builder.io/api/v1/image/assets/TEMP/88269a69ae6a8a4b86d7acd817252d4279b94f3a?width=2432')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundImage:
+            "url('https://api.builder.io/api/v1/image/assets/TEMP/88269a69ae6a8a4b86d7acd817252d4279b94f3a?width=2432')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,8 +67,8 @@ const Footer = () => {
                 PRONTO PARA TRANSFORMAR SEUS DADOS?
               </h2>
               <p className="text-white text-lg leading-relaxed max-w-lg">
-                Agende um diagnóstico gratuito e personalizado e descubra como podemos
-                potencializar seu negócio com dados
+                Agende um diagnóstico gratuito e personalizado e descubra como
+                podemos potencializar seu negócio com dados
               </p>
             </div>
 
@@ -67,7 +76,9 @@ const Footer = () => {
             <div className="space-y-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">Nome</label>
+                  <label className="text-white text-base font-normal">
+                    Nome
+                  </label>
                   <Input
                     name="name"
                     placeholder="Seu nome"
@@ -79,7 +90,9 @@ const Footer = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">E-mail</label>
+                  <label className="text-white text-base font-normal">
+                    E-mail
+                  </label>
                   <Input
                     name="email"
                     type="email"
@@ -92,7 +105,9 @@ const Footer = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">Contato</label>
+                  <label className="text-white text-base font-normal">
+                    Contato
+                  </label>
                   <Input
                     name="contact"
                     placeholder="(xx) xxxx-xxxx"
@@ -104,7 +119,9 @@ const Footer = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">Nome da empresa</label>
+                  <label className="text-white text-base font-normal">
+                    Nome da empresa
+                  </label>
                   <Input
                     name="company"
                     placeholder="Nome da empresa"
@@ -116,8 +133,8 @@ const Footer = () => {
                 </div>
 
                 <Button
-                  type="submit"
-                  className="w-full bg-yellow-100 hover:bg-yellow-200 text-green-900 font-bold py-3 px-6 rounded-full text-base"
+                  variant="hero"
+                  className="group font-bold px-48 py-4 rounded-full text-base"
                 >
                   Agendar diagnóstico gratuito
                 </Button>
@@ -137,9 +154,7 @@ const Footer = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-6 h-6 text-primary flex-shrink-0" />
-                  <span className="text-white text-base">
-                    Rua xxx, xxx,xxx
-                  </span>
+                  <span className="text-white text-base">Rua xxx, xxx,xxx</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-6 h-6 text-primary flex-shrink-0" />
@@ -175,33 +190,56 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-                        {/* Social Media & Support */}
+            {/* Social Media & Support */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Redes Sociais</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Redes Sociais
+                </h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="https://www.instagram.com/fh.data/"
+                    target="_blank"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <Instagram className="w-6 h-6" />
                   </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <Twitter className="w-6 h-6" />
                   </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <Facebook className="w-6 h-6" />
                   </a>
                 </div>
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">ATENDIMENTO</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-3">
+                  ATENDIMENTO
+                </h4>
                 <div className="flex flex-col space-y-2">
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Terms of Use
                   </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     FAQ
                   </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Report Issues
                   </a>
                 </div>
@@ -216,9 +254,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-2">
             <Copyright className="w-6 h-6 text-white" />
-            <p className="text-white text-base text-center">
-              2025 FH Data
-            </p>
+            <p className="text-white text-base text-center">2025 FH Data</p>
           </div>
         </div>
       </div>

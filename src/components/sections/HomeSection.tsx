@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { MagicButton } from '../ui/magicbutton';
+import { Link } from 'react-scroll';
 
 /**
  * Home section component - Hero area with main CTA and floating buttons
@@ -21,7 +22,7 @@ const HomeSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start py-32 min-h-screen">
+        <div className="grid lg:grid-cols-2 gap-12 items-start py-16 min-h-screen">
           {/* Left Column - Hero Text */}
           <div className="space-y-8 lg:pl-[calc((100vw-80rem)/2)] xl:pl-20 2xl:pl-[calc((100vw-80rem)/2)]">
             <div className="space-y-4">
@@ -39,13 +40,16 @@ const HomeSection = () => {
               Alavanque seu negócio com ferramentas personalizadas.
             </p>
 
+            <div>
+              <Link to="contact-form" smooth={true} duration={500}>
             <Button
               variant="hero"
-              className="group font-bold px-8 py-4 rounded-full text-base"
+              className="group font-bold px-44 py-4 rounded-full text-base"
             >
               Saiba mais
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+            </Link>
+            </div>
 
             {/* MagicButtons em formato de lista para telas menores (abaixo do botão Saiba Mais) */}
             <div className="lg:hidden flex flex-col space-y-4 mt-8">

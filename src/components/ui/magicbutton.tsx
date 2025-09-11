@@ -10,7 +10,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-card font-semibold px-8 py-6 text-base",
-        floating: "bg-primary text-white hover:bg-primary/90 shadow-card rounded-full px-6 py-3 font-medium",
+        floating: "bg-primary text-white hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card rounded-full px-6 py-3 font-medium transition-all duration-300",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
@@ -70,7 +70,7 @@ const MagicButton = React.forwardRef<HTMLButtonElement, MagicButtonProps>(
           <Comp 
             className={cn(
               buttonVariants({ variant, size }), 
-              "shadow-[0_4px_12px_rgba(0,0,0,0.25)] text-black", // Box-shadow preta e texto branco
+              "shadow-[0_4px_12px_rgba(0,0,0,0.25)] text-white", // Box-shadow preta e texto branco
               className
             )} 
             ref={ref} 

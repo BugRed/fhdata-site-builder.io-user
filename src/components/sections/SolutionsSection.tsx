@@ -7,7 +7,7 @@ import { ArrowRight, Database, Brain, BarChart3 } from 'lucide-react';
  */
 const SolutionsSection = () => {
   return (
-    <section id="solucoes" className="py-20">
+    <section id="solucoes" className="py-11">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">Nossas Soluções</h2>
@@ -54,14 +54,6 @@ const SolutionsSection = () => {
               facilitar a tomada de decisões em tempo real.
             </p>
           </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="flex justify-start">
-          <Button variant="default" size="lg" className="group">
-            Mais informações
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
         </div>
       </div>
     </section>

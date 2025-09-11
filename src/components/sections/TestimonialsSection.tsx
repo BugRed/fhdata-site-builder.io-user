@@ -64,16 +64,16 @@ const TestimonialsSection = () => {
     <div
       className={`
         flex-shrink-0 transition-all duration-500 ease-in-out relative
-        ${position === 'center' ? 'w-[500px] h-[250px] z-20' : 'w-[380px] h-[220px] z-10'}
+        ${position === 'center' ? 'w-full md:w-[500px] h-[250px] z-20' : 'w-[380px] h-[220px] z-10'}
         ${!isActive ? 'blur-[2px] opacity-60' : ''}
-        ${position === 'left' ? '-mr-20' : position === 'right' ? '-ml-20' : ''}
+        ${position === 'left' ? 'md:-mr-20' : position === 'right' ? 'md:-ml-20' : ''}
       `}
     >
       <div
         className={`
         bg-logistics-bg rounded-[30px] shadow-card w-full h-full relative
         ${position === 'center'
-          ? 'shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-8'
+          ? 'shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-6 md:p-8'
           : 'p-6'}
       `}
       >
@@ -156,7 +156,7 @@ const TestimonialsSection = () => {
             <button
               onClick={prevSlide}
               disabled={isTransitioning}
-              className="absolute top-1/2 left-0 -translate-x-full ml-2.5 -translate-y-1/2 z-30
+              className="absolute top-1/2 -translate-y-1/2 z-30 left-3 md:left-0 md:-translate-x-full md:ml-2.5
                 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             >
               <span className="material-symbols-light text-xl">arrow_back</span>
@@ -165,7 +165,7 @@ const TestimonialsSection = () => {
             <button
               onClick={nextSlide}
               disabled={isTransitioning}
-              className="absolute top-1/2 right-0 translate-x-full mr-2.5 -translate-y-1/2 z-30
+              className="absolute top-1/2 -translate-y-1/2 z-30 right-3 md:right-0 md:translate-x-full md:mr-2.5
                 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
             >
               <span className="material-symbols-light text-xl">arrow_forward</span>
@@ -187,23 +187,29 @@ const TestimonialsSection = () => {
           </h2>
         </div>
 
-        <div className="relative flex justify-center items-center">
-          <div className="flex justify-center items-center space-x-0">
-            <TestimonialCard
-              testimonial={testimonials[getPrevIndex()]}
-              isActive={false}
-              position="left"
-            />
-            <TestimonialCard
-              testimonial={testimonials[currentSlide]}
-              isActive={true}
-              position="center"
-            />
-            <TestimonialCard
-              testimonial={testimonials[getNextIndex()]}
-              isActive={false}
-              position="right"
-            />
+        <div className="relative flex justify-center items-center overflow-hidden">
+          <div className="flex justify-center items-center space-x-0 w-full">
+            <div className="hidden md:block">
+              <TestimonialCard
+                testimonial={testimonials[getPrevIndex()]}
+                isActive={false}
+                position="left"
+              />
+            </div>
+            <div className="w-full">
+              <TestimonialCard
+                testimonial={testimonials[currentSlide]}
+                isActive={true}
+                position="center"
+              />
+            </div>
+            <div className="hidden md:block">
+              <TestimonialCard
+                testimonial={testimonials[getNextIndex()]}
+                isActive={false}
+                position="right"
+              />
+            </div>
           </div>
         </div>
 

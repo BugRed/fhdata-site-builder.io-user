@@ -66,11 +66,11 @@ const ProductsSection = () => {
         </div>
 
         {/* Three Equal Cards */}
-        <div className="grid md:grid-cols-3 gap-8 justify-center mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center mb-12">
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="group relative bg-muted rounded-3xl h-80 overflow-hidden cursor-pointer"
+              className="group relative bg-muted rounded-3xl h-80 overflow-hidden cursor-pointer w-full"
             >
               {/* Default State: Title + Image */}
               <div className="absolute inset-0 flex flex-col justify-between p-10 transition-all duration-300 group-hover:opacity-0">

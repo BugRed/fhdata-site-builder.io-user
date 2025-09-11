@@ -134,7 +134,7 @@ const Footer = () => {
 
                 <Button
                   variant="hero"
-                  className="group font-bold px-48 py-4 rounded-full text-base"
+                  className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
                 >
                   Agendar diagnóstico gratuito
                 </Button>

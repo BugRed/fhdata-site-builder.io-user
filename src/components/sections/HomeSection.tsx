@@ -25,11 +25,11 @@ const HomeSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start py-16 min-h-screen">
           {/* Left Column - Hero Text */}
           <div className="space-y-8 lg:pl-[calc((100vw-80rem)/2)] xl:pl-20 2xl:pl-[calc((100vw-80rem)/2)]">
-            <div className="space-y-4">
-              <p className="text-base font-bold text-yellow-100 tracking-wide uppercase">
+            <div className="space-y-4 ">
+              <p className="text-base font-bold text-[#FAF6E6] tracking-wide uppercase">
                 REVOLUCIONE SUA GESTÃO
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight max-w-md">
                 Transforme dados em decisões de{' '}
                 <span className="text-primary">alto impacto</span>
               </h1>

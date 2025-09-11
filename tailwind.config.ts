@@ -90,6 +90,9 @@ export default {
           "100%": { transform: "translateX(0)" },
         },
       },
+      fontFamily: {
+        avenir: ['"Avenir"', 'sans-serif'],
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

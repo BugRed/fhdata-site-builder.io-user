@@ -110,6 +110,93 @@ All colors MUST be HSL for consistency and theming.
   }
 }
 
+
+/* src/index.css */
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-BlackOblique.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-HeavyOblique.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-MediumOblique.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-BookOblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-LightOblique.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Oblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/AvenirLTPro-Roman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer base {
   * {
     @apply border-border;

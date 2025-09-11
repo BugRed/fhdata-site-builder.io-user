@@ -6,6 +6,7 @@ import CasesSection from '@/components/sections/CasesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import Footer from '@/components/sections/Footer';
 import AboutSection from '@/components/sections/AboutSection';
+import TrustSection from '@/components/sections/TrustSection';
 
 /**
  * Main landing page for FH Data company
@@ -22,9 +23,10 @@ const Index = () => {
       <main>
         <HomeSection/>
         <AboutSection />
-        <SolutionsSection />
+        {/* <SolutionsSection /> */}
         <ProductsSection />
-        <CasesSection />
+        {/* <CasesSection /> */}
+        <TrustSection />
         <TestimonialsSection />
       </main>
       

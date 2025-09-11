@@ -54,7 +54,7 @@ const Header = () => {
                   to={item.to}
                   smooth={true}
                   duration={500}
-                  className="text-yellow-100 hover:text-primary cursor-pointer font-bold text-sm tracking-wide transition-colors"
+                  className="text-[#FAF6E6] hover:text-primary cursor-pointer font-bold text-sm tracking-wide transition-colors"
                 >
                   {item.name}
                 </Link>

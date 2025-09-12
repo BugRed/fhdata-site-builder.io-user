@@ -141,7 +141,12 @@ const Footer = () => {
                   variant="hero"
                   className="group font-bold w-full max-w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base overflow-hidden break-words text-center"
                 >
-                  Agendar diagnóstico gratuito
+                  {/* Mostra só em telas pequenas */}
+                  <span className="block sm:hidden">Agendar</span>
+                  {/* Mostra do sm pra cima */}
+                  <span className="hidden sm:block">
+                    Agendar diagnóstico gratuito
+                  </span>
                 </Button>
               </form>
             </div>

@@ -41,31 +41,51 @@ const ProductsSection = () => {
         </div>
 
         {/* Three Equal Cards */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 sm:gap-8 justify-center mb-12">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-2 sm:gap-4 justify-center mb-12">
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="group relative rounded-3xl h-80 overflow-hidden cursor-pointer w-full bg-muted transition-colors duration-300 ease-out group-hover:bg-primary-foreground"
+              className="group relative rounded-3xl 
+                 h-[clamp(6rem,20vw,18rem)] 
+                 overflow-hidden cursor-pointer w-full max-w-full flex-shrink-0
+                 bg-muted transition-colors duration-300 ease-out 
+                 group-hover:bg-primary-foreground"
             >
-              {/* Imagem ocupando todo o card */}
               <img
                 src={sector.image}
                 alt={sector.title}
-                className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:translate-y-full"
+                className="absolute inset-0 w-full h-full object-cover 
+                   transform transition-transform duration-500 ease-out 
+                   group-hover:translate-y-full"
               />
 
-              {/* Título inicial no canto superior esquerdo */}
-              <h3 className="absolute top-4 left-4 text-primary text-lg font-medium transition-opacity duration-300 group-hover:opacity-0 z-20">
+              <h3
+                className="absolute top-1 left-1 text-primary 
+                   text-[clamp(0.55rem,1.5vw,0.95rem)] 
+                   font-medium transition-opacity duration-300 
+                   group-hover:opacity-0 z-20 break-words"
+              >
                 {sector.title}
               </h3>
 
-              {/* Hover State: descrição deslizando de baixo para cima */}
-              <div className="absolute inset-0 flex items-center justify-center p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out bg-transparent">
-                <div className="text-center space-y-4">
-                  <h3 className="text-primary text-[clamp(1rem,2.5vw,1.25rem)] font-avenir font-bold leading-tight line-clamp-2">
+              <div
+                className="absolute inset-0 flex items-center justify-center p-1 
+                   transform translate-y-full group-hover:translate-y-0 
+                   transition-transform duration-500 ease-out bg-transparent"
+              >
+                <div className="text-center space-y-1 overflow-hidden">
+                  <h3
+                    className="text-primary 
+                         text-[clamp(0.6rem,1.8vw,1rem)] 
+                         font-bold leading-tight line-clamp-2 break-words"
+                  >
                     {sector.title}
                   </h3>
-                  <p className="text-primary text-[clamp(0.9rem,2vw,1rem)] leading-relaxed line-clamp-3">
+                  <p
+                    className="text-primary 
+                        text-[clamp(0.5rem,1.5vw,0.9rem)] 
+                        leading-snug line-clamp-3 break-words"
+                  >
                     {sector.description}
                   </p>
                 </div>

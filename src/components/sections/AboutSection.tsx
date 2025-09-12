@@ -32,7 +32,9 @@ const AboutSection = () => {
 
             {/* Coluna 2 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">Redução de custo</h3>
+              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
+                Redução de custo
+              </h3>
               <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.
@@ -41,7 +43,9 @@ const AboutSection = () => {
 
             {/* Coluna 3 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">Mais velocidade</h3>
+              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
+                Mais velocidade
+              </h3>
               <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.
@@ -56,7 +60,13 @@ const AboutSection = () => {
             variant="hero"
             className="group font-bold w-full max-w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base overflow-hidden break-words text-center"
           >
-            Solicite um diagnóstico gratuito
+            {/* Texto normal em telas médias/grandes */}
+            <span className="hidden sm:inline">
+              Solicite um diagnóstico gratuito
+            </span>
+
+            {/* Texto curto em telas pequenas */}
+            <span className="inline sm:hidden">Solicite diagnóstico</span>
           </Button>
         </Link>
       </div>

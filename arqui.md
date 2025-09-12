@@ -1,3 +1,19 @@
-4 - o carrossel ao diminuir a tela: As selas devem sumir (apenas ao diminuir a tela, para telas grandes MANTENHA O DESIGN ATUAL COM AS SETAS E OS CARDS DE PROXIMO E ANTERIOR), o card com os depoimentos e img deve ficar retangular, mas dessa vez com a altura maior que a largura seguindo a responsividade, ou seja quanto menos larga a tela, menos largo o card e mais alto ele ficaria, mantendo uma altura minima para não extrapolar a section; Ainda, na versão mobile o carrossel deve poder ser passado tanto clicando nas bolinhas abaixo do card quanto passando com movimento de dedo do touch;
+O projeto está quase perfeito, mas em telas menores que 252px de largura (ex.: dispositivos muito pequenos ou janelas redimensionadas), o formulário do Footer e a sessão About ainda quebram layout.
 
-A imagem junto com o nome e cargo da pessoa devem SEMPRE SEREM RENDERIZADOS no fim do card a esquerda sem enconstar nas bordas: a foto deve estar a 40px de distancia da borda esquerda e 38px da borda bottom; O nome e cargo devem: o Nome deve começar na mesma altura que a imagem, já o cargo deve estar 18px abaixo do nome e 34px acima do bottom do card eles; O depoimento, a foto e os nomes deveme star sempre alinhados a esquerda; O depoimento deve estar 148px acima do nome e 60px da border top, 40px da border left, 249px da border rigth e 246px da border bottom. Logo o card deve ter: Largura:592px Altura:360px Raio:40px; As setas de passagem deve estar a 24px da border exterior do card, ou seja, as setas devem estar fora do card. lembre-se de não permitir que as setas recebam o blur dos cards atras delas; 
+Ajuste somente essas duas seções (Footer form{/* Right Column - Form */} e AboutSection) para suportar telas ultra pequenas (<252px) sem que textos ou inputs ultrapassem os cards ou o background.
+
+Não altere o design nem a estrutura de outras áreas do site, pois já estão ótimas.
+
+Aplique as seguintes melhorias:
+
+Grid ultra responsivo → troque minmax(260px,1fr) por algo menor (minmax(160px,1fr) ou minmax(0,1fr)) para que o conteúdo nunca ultrapasse a tela.
+
+Inputs / textarea / botões → usar max-w-full + w-full em telas muito pequenas, garantindo que fiquem sempre dentro do card.
+
+Textos e headings → revise os clamp() usados para títulos e parágrafos dessas seções, garantindo que reduzam até um mínimo seguro em telas muito estreitas (ex: clamp(0.75rem, 2vw, 1rem) para textos e clamp(1rem, 4vw, 2rem) para títulos).
+
+Overflow → aplicar overflow-hidden + break-words em textos, labels e botões do Footer/About para evitar que estourem.
+
+Container do formulário → garantir que o background acompanhe corretamente e os inputs nunca “vazem” para fora.
+
+✅ Resultado esperado: mesmo em telas <252px, todos os elementos dessas duas seções continuam dentro do card/container, o texto escala proporcionalmente, inputs ocupam 100% da largura disponível e nada “vaza” para fora.

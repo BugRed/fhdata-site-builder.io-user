@@ -197,31 +197,6 @@ const TestimonialsSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Setas dentro do card central, fixadas na borda externa */}
-        {position === "center" && (
-          <>
-            <button
-              onClick={prevSlide}
-              disabled={isTransitioning}
-              className="hidden md:absolute md:block top-1/2 -translate-y-1/2 z-30 left-3 md:left-0 md:-translate-x-full md:ml-2.5
-                bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
-            >
-              <span className="material-symbols-light text-xl">arrow_back</span>
-            </button>
-
-            <button
-              onClick={nextSlide}
-              disabled={isTransitioning}
-              className="hidden md:absolute md:block top-1/2 -translate-y-1/2 z-30 right-3 md:right-0 md:translate-x-full md:mr-2.5
-                bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-all disabled:opacity-50 hover:scale-105"
-            >
-              <span className="material-symbols-light text-xl">
-                arrow_forward
-              </span>
-            </button>
-          </>
-        )}
       </div>
     </div>
   );
@@ -238,15 +213,39 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Container do carrossel com centralização perfeita */}
+        {/* Container do carrossel */}
         <div
           className="relative w-full flex justify-center items-center"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Wrapper interno que garante o alinhamento central */}
-          <div className="relative flex items-center justify-center">
-            {/* Card da esquerda (apenas desktop) */}
+          {/* Setas do carrossel - fora do card */}
+          <button
+            onClick={prevSlide}
+            disabled={isTransitioning}
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 z-30 
+               bg-primary hover:bg-primary/90 text-white rounded-full p-3 
+               shadow-lg transition-all disabled:opacity-50 hover:scale-105"
+          >
+            <span className="material-symbols-light text-xl">arrow_back</span>
+          </button>
+
+          <button
+            onClick={nextSlide}
+            disabled={isTransitioning}
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 z-30 
+               bg-primary hover:bg-primary/90 text-white rounded-full p-3 
+               shadow-lg transition-all disabled:opacity-50 hover:scale-105"
+          >
+            <span className="material-symbols-light text-xl">
+              arrow_forward
+            </span>
+          </button>
+
+          {/* Wrapper interno do carrossel */}
+          <div className="relative flex items-center justify-center gap-4 md:gap-8">
+            {/* Card da esquerda */}
             <div className="hidden md:flex justify-center items-center">
               <TestimonialCard
                 testimonial={testimonials[getPrevIndex()]}
@@ -255,7 +254,7 @@ const TestimonialsSection = () => {
               />
             </div>
 
-            {/* Card central - sempre centralizado */}
+            {/* Card central */}
             <div className="flex justify-center items-center mx-auto md:mx-0">
               <TestimonialCard
                 testimonial={testimonials[currentSlide]}
@@ -264,7 +263,7 @@ const TestimonialsSection = () => {
               />
             </div>
 
-            {/* Card da direita (apenas desktop) */}
+            {/* Card da direita */}
             <div className="hidden md:flex justify-center items-center">
               <TestimonialCard
                 testimonial={testimonials[getNextIndex()]}
@@ -307,9 +306,12 @@ const TestimonialsSection = () => {
           <Link to="contact-form" smooth={true} duration={500}>
             <Button
               variant="hero"
-              className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
+              className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base text-center"
             >
-              Começe sua transformação
+              {/* Texto normal para telas médias/grandes */}
+              <span className="hidden xs:inline">Começe sua transformação</span>
+              {/* Texto curto para telas pequenas */}
+              <span className="inline xs:hidden">Transformar</span>
             </Button>
           </Link>
         </div>

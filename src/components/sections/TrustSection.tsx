@@ -24,10 +24,10 @@ const TrustSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Section - Grid 4x3 */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-8 py-5">
+          <h3 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-foreground mb-8 py-5">
             QUEM CONFIA
           </h3>
-          <div className="grid grid-cols-4 gap-6 items-center opacity-60 py-5">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-6 items-center opacity-60 py-5">
             {clients.map((client, index) => (
               <div
                 key={index}

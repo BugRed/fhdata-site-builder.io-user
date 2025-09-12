@@ -8,23 +8,23 @@ const AboutSection = () => {
   return (
     <section id="about" className="bg-background">
       <div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 border rounded-3xl
+        className="container mx-auto px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
              mt-[112px] mb-10
              py-16
              max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"
       >
         {/* About Section */}
         <div className="text-center space-y-6">
-          <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] font-medium text-foreground">
+          <h2 className="text-[clamp(1rem,4vw,2rem)] font-medium text-foreground overflow-hidden break-words">
             ALAVANQUE SEU NEGÓCIO
           </h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 mt-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 mt-12">
             {/* Coluna 1 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,2.5vw,1.25rem)] font-bold text-white">
+              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
                 Mais rentabilidade
               </h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.
               </p>
@@ -32,8 +32,8 @@ const AboutSection = () => {
 
             {/* Coluna 2 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,2.5vw,1.25rem)] font-bold text-white">Redução de custo</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">Redução de custo</h3>
+              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.
               </p>
@@ -41,8 +41,8 @@ const AboutSection = () => {
 
             {/* Coluna 3 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,2.5vw,1.25rem)] font-bold text-white">Mais velocidade</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">Mais velocidade</h3>
+              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.
               </p>
@@ -54,7 +54,7 @@ const AboutSection = () => {
         <Link to="contact-form" smooth={true} duration={500}>
           <Button
             variant="hero"
-            className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
+            className="group font-bold w-full max-w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base overflow-hidden break-words text-center"
           >
             Solicite um diagnóstico gratuito
           </Button>

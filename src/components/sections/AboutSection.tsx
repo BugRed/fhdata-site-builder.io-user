@@ -57,16 +57,14 @@ const AboutSection = () => {
       <div className="flex justify-center mb-10">
         <Link to="contact-form" smooth={true} duration={500}>
           <Button
-            variant="hero"
-            className="group font-bold w-full max-w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base overflow-hidden break-words text-center"
+            variant="default"
+            size="sm"
+            className="font-bold px-6 py-3 rounded-full overflow-hidden break-words text-center"
           >
-            {/* Texto normal em telas médias/grandes */}
-            <span className="hidden sm:inline">
-              Solicite um diagnóstico gratuito
-            </span>
-
-            {/* Texto curto em telas pequenas */}
-            <span className="inline sm:hidden">Solicite diagnóstico</span>
+            {/* Texto para telas médias/grandes */}
+            <span className="hidden sm:inline">Entre em contato</span>
+            {/* Texto curto para telas pequenas */}
+            <span className="inline sm:hidden">Contato</span>
           </Button>
         </Link>
       </div>

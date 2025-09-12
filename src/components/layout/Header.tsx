@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Link } from 'react-scroll';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Link } from "react-scroll";
 
 /**
  * Header component for FH Data landing page
@@ -12,27 +12,26 @@ import { Link } from 'react-scroll';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navItems = [
-    { name: 'Home', to: 'home' },
-    { name: 'Soluções', to: 'solucoes' },
-    { name: 'Cases', to: 'cases' },
-    { name: 'Produtos', to: 'produtos' },
-    { name: 'Quem somos', to: 'about' },
-    
+    { name: "Home", to: "home" },
+    { name: "Soluções", to: "solucoes" },
+    { name: "Cases", to: "cases" },
+    { name: "Produtos", to: "produtos" },
+    { name: "Quem somos", to: "about" },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // Implement search functionality here
-    console.log('Searching for:', searchQuery);
+    console.log("Searching for:", searchQuery);
     setIsSearchOpen(false);
-    setSearchQuery('');
+    setSearchQuery("");
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-transparent z-50">
+    <header className="fixed top-0 left-0 w-full bg-[#464E4E]/15 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 min-h-[90px]">
           {/* Left Side: Logo and Navigation */}
@@ -109,9 +108,18 @@ const Header = () => {
               <Button
                 variant="default"
                 size="sm"
-                className="font-bold px-6 py-3 rounded-full"
+                className="font-bold px-6 py-3 rounded-full text-center"
               >
-                Entre em contato
+                {/* Texto para telas grandes (>= 960px) */}
+                <span className="hidden lg:inline">
+                  Entre em contato
+                </span>
+
+                {/* Texto para telas entre 760px e 959px */}
+                <span className="hidden md:inline lg:hidden">Contato</span>
+
+                {/* Texto para telas pequenas (< 760px) */}
+                <span className="inline md:hidden">Contato</span>
               </Button>
             </Link>
           </div>
@@ -122,7 +130,11 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-foreground hover:text-primary"
             >
-              {isMenuOpen ? <span className="material-symbols-light text-2xl">close</span> : <span className="material-symbols-light text-2xl">menu</span>}
+              {isMenuOpen ? (
+                <span className="material-symbols-light text-2xl">close</span>
+              ) : (
+                <span className="material-symbols-light text-2xl">menu</span>
+              )}
             </button>
           </div>
         </div>
@@ -154,7 +166,9 @@ const Header = () => {
                     className="flex-1 bg-background border-border text-foreground"
                   />
                   <Button type="submit" variant="default" size="sm">
-                    <span className="material-symbols-light text-lg">search</span>
+                    <span className="material-symbols-light text-lg">
+                      search
+                    </span>
                   </Button>
                 </form>
 

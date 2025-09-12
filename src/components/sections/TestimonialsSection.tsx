@@ -211,8 +211,6 @@ const TestimonialsSection = () => {
             <span className="text-white">E O QUE ELES DIZEM</span>
           </h2>
         </div>
-
-        {/* Container do carrossel com centralização perfeita */}
         {/* Container do carrossel */}
         <div
           className="relative w-full flex justify-center items-center"

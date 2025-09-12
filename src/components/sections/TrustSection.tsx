@@ -18,7 +18,7 @@ const TrustSection = () => {
     { src: "/assets/logo-usp.png", alt: "Cliente 11" },
     { src: "/assets/logo-vibra.png", alt: "Cliente 12" },
   ];
-  /* seria bom aqui o link para a empresa que confia */ 
+  /* seria bom aqui o link para a empresa que confia */
   return (
     <section id="about" style={{ backgroundColor: "#252525" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +27,12 @@ const TrustSection = () => {
           <h3 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-foreground mb-8 py-5">
             QUEM CONFIA
           </h3>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-6 items-center opacity-60 py-5">
+          <div
+            className="
+  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 
+  gap-6 items-center opacity-60 py-5
+"
+          >
             {clients.map((client, index) => (
               <div
                 key={index}

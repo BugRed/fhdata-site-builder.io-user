@@ -15,18 +15,18 @@ const ProductsSection = () => {
       title: "INICIO DA JORNADA EM DADOS & IA",
       description:
         "O primeiro passo para sair do escuro e começar a operar com inteligência de dados real.",
-      image: "/img/ex-woman.jpg",
+      image: "/img/ex-woman.png",
     },
     {
       title: "ALAVANCAGEM COM USO DE DADOS & IA",
       description: "Escalar resultados sem aumentar custo operacional.",
-      image: "/img/ex-store.jpg",
+      image: "/img/ex-store.png",
     },
     {
       title: "IA NO DNA DA EMPRESA",
       description:
-        "Inteligência de dados como parte do DNA da empresa — e vantagem competitiva definitiva.",
-      image: "/img/ex-smile2.jpg",
+        "Inteligência de dados como parte do DNA da empresa e vantagem competitiva definitiva.",
+      image: "/img/ex-smile2.png",
     },
   ];
 
@@ -49,7 +49,7 @@ const ProductsSection = () => {
                  h-[clamp(6rem,20vw,18rem)] 
                  overflow-hidden cursor-pointer w-full max-w-full flex-shrink-0
                  bg-muted transition-colors duration-300 ease-out 
-                 group-hover:bg-primary-foreground"
+                 group-hover:bg-primary-foreground "
             >
               <img
                 src={sector.image}
@@ -60,10 +60,11 @@ const ProductsSection = () => {
               />
 
               <h3
-                className="absolute top-1 left-1 text-primary 
-                   text-[clamp(0.55rem,1.5vw,0.95rem)] 
-                   font-medium transition-opacity duration-300 
-                   group-hover:opacity-0 z-20 break-words"
+                className="absolute inset-0 flex items-center justify-center 
+             text-center text-white 
+             text-[clamp(0.9rem,2.5vw,1.6rem)] 
+             transition-opacity duration-300 
+             group-hover:opacity-0 z-20 break-words font-extrabold px-2"
               >
                 {sector.title}
               </h3>
@@ -77,7 +78,7 @@ const ProductsSection = () => {
                   <h3
                     className="text-primary 
                          text-[clamp(0.6rem,1.8vw,1rem)] 
-                         font-bold leading-tight line-clamp-2 break-words"
+                         font-extrabold leading-tight line-clamp-2 break-words"
                   >
                     {sector.title}
                   </h3>

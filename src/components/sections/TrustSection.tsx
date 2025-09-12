@@ -6,17 +6,17 @@ const TrustSection = () => {
   // Array de clientes com logo
   const clients = [
     { src: "/assets/logo-brose.png", alt: "Cliente 1" },
-    { src: "/assets/logo-bwa.png", alt: "Cliente 2" },
-    { src: "/assets/logo-emprel.png", alt: "Cliente 3" },
+    { src: "/assets/logo-suzano.png", alt: "Cliente 10" },
+    { src: "/assets/logo-vibra.png", alt: "Cliente 12" },
     { src: "/assets/logo-estadao.png", alt: "Cliente 4" },
     { src: "/assets/logo-fricarne.png", alt: "Cliente 5" },
     { src: "/assets/logo-grupopq.png", alt: "Cliente 6" },
     { src: "/assets/logo-hebron.png", alt: "Cliente 7" },
     { src: "/assets/logo-pgquimica.png", alt: "Cliente 8" },
     { src: "/assets/logo-pref-recife.png", alt: "Cliente 9" },
-    { src: "/assets/logo-suzano.png", alt: "Cliente 10" },
+    { src: "/assets/logo-bwa.png", alt: "Cliente 2" },
     { src: "/assets/logo-usp.png", alt: "Cliente 11" },
-    { src: "/assets/logo-vibra.png", alt: "Cliente 12" },
+    { src: "/assets/logo-emprel.png", alt: "Cliente 3" },
   ];
   /* seria bom aqui o link para a empresa que confia */
   return (

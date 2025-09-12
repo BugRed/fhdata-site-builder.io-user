@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 /**
  * Products/Services section - Three equal rectangular cards for different sectors
@@ -12,47 +12,22 @@ import { ArrowRight } from 'lucide-react';
 const ProductsSection = () => {
   const sectors = [
     {
-      title: 'MAPEAMENTO E GOVERNANÇA',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: (
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="w-16 h-12 flex items-center justify-center">
-            <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 24L45.4456 40.5H18.5544L32 24Z" fill="#7B7B7B"/>
-              <path d="M41 33L52.4861 48H29.5139L41 33Z" fill="#7B7B7B"/>
-            </svg>
-          </div>
-        </div>
-      )
+      title: "INICIO DA JORNADA EM DADOS & IA",
+      description:
+        "O primeiro passo para sair do escuro e começar a operar com inteligência de dados real.",
+      image: "/img/ex-woman.jpg",
     },
     {
-      title: 'PREVISÃO E IA APLICADA',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: (
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="w-16 h-12 flex items-center justify-center">
-            <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 24L45.4456 40.5H18.5544L32 24Z" fill="#7B7B7B"/>
-              <path d="M41 33L52.4861 48H29.5139L41 33Z" fill="#7B7B7B"/>
-            </svg>
-          </div>
-        </div>
-      )
+      title: "ALAVANCAGEM COM USO DE DADOS & IA",
+      description: "Escalar resultados sem aumentar custo operacional.",
+      image: "/img/ex-store.jpg",
     },
     {
-      title: 'DASHBOARDS E AUTOMAÇÃO',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: (
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="w-16 h-12 flex items-center justify-center">
-            <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 24L45.4456 40.5H18.5544L32 24Z" fill="#7B7B7B"/>
-              <path d="M41 33L52.4861 48H29.5139L41 33Z" fill="#7B7B7B"/>
-            </svg>
-          </div>
-        </div>
-      )
-    }
+      title: "IA NO DNA DA EMPRESA",
+      description:
+        "Inteligência de dados como parte do DNA da empresa — e vantagem competitiva definitiva.",
+      image: "/img/ex-smile2.jpg",
+    },
   ];
 
   return (
@@ -66,29 +41,31 @@ const ProductsSection = () => {
         </div>
 
         {/* Three Equal Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center mb-12 ">
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="group relative bg-muted rounded-3xl h-80 overflow-hidden cursor-pointer w-full"
+              className="group relative rounded-3xl h-80 overflow-hidden cursor-pointer w-full bg-muted transition-colors duration-300 ease-out group-hover:bg-primary-foreground"
             >
-              {/* Default State: Title + Image */}
-              <div className="absolute inset-0 flex flex-col justify-between p-10 transition-all duration-300 group-hover:opacity-0">
-                <h3 className="text-white text-xl font-bold leading-tight">
-                  {sector.title}
-                </h3>
-                <div className="flex-1 flex items-center justify-center">
-                  {sector.image}
-                </div>
-              </div>
+              {/* Imagem ocupando todo o card */}
+              <img
+                src={sector.image}
+                alt={sector.title}
+                className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-500 ease-out group-hover:translate-y-full"
+              />
 
-              {/* Hover State: Text slides in from top */}
-              <div className="absolute inset-0 bg-muted flex items-center justify-center p-10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                <div className="text-center space-y-6">
-                  <h3 className="text-white text-xl font-bold leading-tight">
+              {/* Título inicial no canto superior esquerdo */}
+              <h3 className="absolute top-4 left-4 text-primary text-lg font-medium transition-opacity duration-300 group-hover:opacity-0 z-20">
+                {sector.title}
+              </h3>
+
+              {/* Hover State: descrição deslizando de baixo para cima */}
+              <div className="absolute inset-0 flex items-center justify-center p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out bg-transparent">
+                <div className="text-center space-y-4">
+                  <h3 className="text-primary text-xl font-avenir font-bold leading-tight">
                     {sector.title}
                   </h3>
-                  <p className="text-white text-base leading-relaxed">
+                  <p className="text-primary text-base leading-relaxed">
                     {sector.description}
                   </p>
                 </div>

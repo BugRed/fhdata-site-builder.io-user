@@ -7,32 +7,25 @@ import { Button } from "@/components/ui/button";
 const CasesSection = () => {
   const cases = [
     {
-      percentage: "85%",
-      title: "Redução de custos operacionais",
+      percentage: "23%",
+      title: "Redução de incidentes de segurança",
       description:
-        "Implementação de sistema preditivo para manutenção industrial reduziu paradas não programadas e otimizou recursos.",
+        "Aumento nos planos de ação para previnir incidentes de segurança no período de 2024/2025.",
       side: "left",
     },
     {
-      percentage: "60%",
-      title: "Aumento na eficiência logística",
+      percentage: "37%",
+      title: "Previsibilidade para obras de expansão futuras",
       description:
-        "Otimização de rotas e gestão inteligente de estoque resultou em entregas mais rápidas e menor desperdício.",
+        "Otimização de custos operacionais da expansão da infra de armazenamento e estoque.",
       side: "right",
     },
     {
-      percentage: "120%",
-      title: "Crescimento na produtividade agrícola",
+      percentage: "34%",
+      title: "Faturamento no setor alimenticio",
       description:
-        "Análise de dados climáticos e monitoramento IoT aumentaram significativamente a produção por hectare.",
+        "Crescimento no faturamento total de empresa do setor alimenticio no período de 2024/2025.",
       side: "left",
-    },
-    {
-      percentage: "95%",
-      title: "Precisão nas previsões de demanda",
-      description:
-        "Modelo de machine learning implementado para prever demanda sazonal com alta precisão e reduzir perdas.",
-      side: "right",
     },
   ];
 

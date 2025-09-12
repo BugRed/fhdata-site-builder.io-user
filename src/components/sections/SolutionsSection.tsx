@@ -21,7 +21,7 @@ const SolutionsSection = () => {
           <div className="flex flex-col space-y-6">
             <div className="bg-card rounded-lg shadow-card p-8 h-64 flex flex-col justify-center items-center text-center">
               <Database className="w-16 h-16 text-primary mb-4" />
-              <h3 className="text-2xl font-bold text-foreground">MAPEAMENTO & GOVERNANÇA</h3>
+              <h3 className="text-2xl font-bold text-foreground">Início da jornada em dados e IA</h3>
             </div>
             <p className="text-muted-foreground">
               Estruturamos e organizamos seus dados com governança robusta, 

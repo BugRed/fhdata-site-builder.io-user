@@ -8,10 +8,11 @@ const AboutSection = () => {
   return (
     <section id="about" className="bg-background">
       <div
-        className="max-w-7xl border rounded-3xl 
-             mx-[113px] mt-[112px] mb-10
-             max-md:mx-3 max-md:mt-10 max-md:mb-10 
-             px-12 py-16 max-md:px-6 max-md:py-10"
+        className="container border rounded-3xl 
+             mt-[112px] mb-10 
+             px-12 py-16
+             max-w-[calc(100%-226px)]
+             max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-1"
       >
         {/* About Section */}
         <div className="text-center space-y-6">

@@ -12,21 +12,21 @@ const TestimonialsSection = () => {
       position: "Diretora de TI, TechCorp",
       testimonial:
         '"A FH Data transformou nossa análise de dados. Agora temos insights em tempo real que impulsionaram nosso crescimento em 40%."',
-      image: "/api/placeholder/80/80",
+      image: "/img/ex-smile.jpg",
     },
     {
       name: "João Santos",
       position: "CEO, StartupInovadora",
       testimonial:
         '"Implementar IA com a FH Data foi um divisor de águas. Nossa eficiência operacional aumentou drasticamente."',
-      image: "/api/placeholder/80/80",
+      image: "/img/ex-man.jpg",
     },
     {
       name: "Ana Costa",
       position: "Gerente de Analytics, BigCompany",
       testimonial:
         '"O suporte da FH Data é excepcional. Eles não apenas fornecem dados, mas insights acionáveis que fazem a diferença."',
-      image: "/api/placeholder/80/80",
+      image: "/img/ex-smile2.jpg",
     },
   ];
 

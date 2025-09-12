@@ -27,8 +27,8 @@ const HomeSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start py-16 min-h-screen">
-          {/* Left Column - Hero Text */}
-          <div className="space-y-8 lg:pl-[calc((100vw-80rem)/2)] xl:pl-20 2xl:pl-[calc((100vw-80rem)/2)]">
+          {/* Left Column */}
+          <div className="space-y-8 lg:pl-0 xl:pl-20 2xl:pl-0">
             <div className="space-y-4">
               <p className="text-base font-bold text-[#FAF6E6] tracking-wide uppercase">
                 REVOLUCIONE SUA GESTÃO
@@ -90,7 +90,7 @@ const HomeSection = () => {
           {/* Right Column - Floating Buttons com Alinhamento Alternado (apenas em telas grandes) */}
           {/* Mantém todas as configurações originais, mas centraliza os botões próximos */}
           {/* Alinhado verticalmente com o H1 */}
-          <div className="hidden lg:flex flex-col justify-between h-[180px] lg:items-center lg:pr-[calc((100vw-80rem)/2)] xl:pr-20 2xl:pr-[calc((100vw-80rem)/2)] mt-0 lg:col-span-1">
+          <div className="hidden lg:flex flex-col justify-between gap-6 lg:items-center lg:pr-0 xl:pr-20 2xl:pr-0 mt-0 lg:col-span-1">
             {/* Primeira linha - 'Dados' alinhado à esquerda - altura inicial do H1 */}
             <div className="flex justify-start w-80">
               <MagicButton

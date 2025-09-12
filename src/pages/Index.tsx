@@ -5,8 +5,9 @@ import ProductsSection from '@/components/sections/ProductsSection';
 import CasesSection from '@/components/sections/CasesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import Footer from '@/components/sections/Footer';
-import AboutSection from '@/components/sections/AboutSection';
+import JornadaSection from '@/components/sections/JornadaSection';
 import TrustSection from '@/components/sections/TrustSection';
+import AboutSection from '@/components/sections/AboutSection';
 
 /**
  * Main landing page for FH Data company
@@ -23,6 +24,7 @@ const Index = () => {
       <main>
         <HomeSection/>
         <AboutSection />
+        <JornadaSection />
         <SolutionsSection />
         <ProductsSection />
         <CasesSection />

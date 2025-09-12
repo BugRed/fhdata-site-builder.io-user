@@ -12,21 +12,27 @@ import { ArrowRight } from "lucide-react";
 const ProductsSection = () => {
   const sectors = [
     {
-      title: "INICIO DA JORNADA EM DADOS & IA",
+      title: "COMERCIAL",
       description:
-        "O primeiro passo para sair do escuro e começar a operar com inteligência de dados real.",
-      image: "/img/ex-woman.png",
+        "Impulsione vendas com previsão de demanda, precificação inteligente e recomendações personalizadas de produtos, além de concessão de crédito mais seguras.",
+      image: "/img/img-right.png",
     },
     {
-      title: "ALAVANCAGEM COM USO DE DADOS & IA",
-      description: "Escalar resultados sem aumentar custo operacional.",
-      image: "/img/ex-store.png",
+      title: "LOGÍSTICA & ESTOQUE",
+      description: "Otimize a cadeia de suprimentos com previsão de estoque, roteirização eficiente, precificação de fretes e redistribuição inteligente entre unidades.",
+      image: "/img/img-center.png",
     },
     {
-      title: "IA NO DNA DA EMPRESA",
+      title: "PRODUÇÃO",
       description:
-        "Inteligência de dados como parte do DNA da empresa e vantagem competitiva definitiva.",
-      image: "/img/ex-smile2.png",
+        "Simule cenários e aumente a eficiência operacional com modelos de Digital Twin para decisões mais rápidas e precisas.",
+      image: "/img/img-product.png",
+    },
+    {
+      title: "SEGURANÇA DO TRABALHO",
+      description:
+        "Reduza riscos com visão computacional para monitorar EPIs, previsão incidentes e reforço da cultura de segurança no trabalho.",
+      image: "/img/img-left.png",
     },
   ];
 
@@ -56,7 +62,7 @@ const ProductsSection = () => {
                 alt={sector.title}
                 className="absolute inset-0 w-full h-full object-cover 
                    transform transition-transform duration-500 ease-out 
-                   group-hover:translate-y-full"
+                   group-hover:translate-y-full opacity-30"
               />
 
               <h3
@@ -72,7 +78,7 @@ const ProductsSection = () => {
               <div
                 className="absolute inset-0 flex items-center justify-center p-1 
                    transform translate-y-full group-hover:translate-y-0 
-                   transition-transform duration-500 ease-out bg-transparent"
+                   transition-transform duration-500 ease-out bg-transparent h-full"
               >
                 <div className="text-center space-y-1 overflow-hidden">
                   <h3

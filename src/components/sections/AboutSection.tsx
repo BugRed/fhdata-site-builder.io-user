@@ -1,9 +1,6 @@
 import { Link } from "react-scroll";
 import { Button } from "../ui/button";
-/**
- * About section component - Hero area with main CTA and floating buttons
- * Features: Two-column layout, hero text, floating action buttons
- */
+
 const AboutSection = () => {
   return (
     <section id="about" className="bg-background">
@@ -13,60 +10,35 @@ const AboutSection = () => {
              py-16
              max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"
       >
-        {/* About Section */}
-        <div className="text-center space-y-6">
-          <h2 className="text-[clamp(1rem,4vw,2rem)] font-medium text-foreground overflow-hidden break-words">
-            ALAVANQUE SEU NEGÓCIO
-          </h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 mt-12">
-            {/* Coluna 1 */}
-            <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
-                Mais rentabilidade
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-                perspiciatis unde omnis iste natus error sit voluptatem.
-              </p>
-            </div>
+        {/* Grid com duas colunas */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Coluna esquerda: título + descrição */}
+          <div className="flex flex-col justify-start space-y-6 text-left">
+            <h2 className="text-[clamp(1.25rem,4vw,2.5rem)] font-bold text-foreground break-words">
+              QUEM SOMOS?
+            </h2>
+            <p className="text-[clamp(0.875rem,2vw,1.125rem)] leading-relaxed max-w-lg break-words">
+              Transformamos dados em inteligência que acelera negócios, com
+              resultados que refletem nossa experiência e capacidade de
+              inovação. Com uma equipe multidisciplinar, ajudamos os gestores a
+              tomar decisões assertivas, analisando o passado e prevendo o
+              futuro baseado em dados com uso de IA.
+            </p>
+          </div>
 
-            {/* Coluna 2 */}
-            <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
-                Redução de custo
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-                perspiciatis unde omnis iste natus error sit voluptatem.
-              </p>
-            </div>
-
-            {/* Coluna 3 */}
-            <div className="space-y-3 text-left">
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
-                Mais velocidade
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-                perspiciatis unde omnis iste natus error sit voluptatem.
-              </p>
-            </div>
+          {/* Coluna direita: placeholder para imagem ou conteúdo extra */}
+          <div className="flex justify-center items-center border rounded-2xl p-6 max-w-lg bg-[#464E4E] h-72 text-center">
+            <img
+              src="/img/map.png"
+              alt="mapa do Brazil"
+              className="w-full h-full object-contain"
+            />
+            <p>
+              + de 330 soluções de IA e Analytics desenvolvidas em diferentes
+              áreas
+            </p>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center mb-10">
-        <Link to="contact-form" smooth={true} duration={500}>
-          <Button
-            variant="default"
-            size="sm"
-            className="font-bold px-6 py-3 rounded-full overflow-hidden break-words text-center"
-          >
-            {/* Texto para telas médias/grandes */}
-            <span className="hidden sm:inline">Entre em contato</span>
-            {/* Texto curto para telas pequenas */}
-            <span className="inline sm:hidden">Contato</span>
-          </Button>
-        </Link>
       </div>
     </section>
   );

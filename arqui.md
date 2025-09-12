@@ -1,5 +1,5 @@
 📊 Alavancagem Comercial
-Impulsione vendas com previsão de demanda, precificação inteligente e recomendações personalizadas de produtos, além de análises de crédito mais seguras.
+Impulsione vendas com previsão de demanda, precificação inteligente e recomendações personalizadas de produtos, além de concessão de crédito mais seguras.
 
 🚚 Alavancagem na Logística
 Otimize a cadeia de suprimentos com previsão de estoque, roteirização eficiente, precificação de fretes e redistribuição inteligente entre unidades.
@@ -8,7 +8,7 @@ Otimize a cadeia de suprimentos com previsão de estoque, roteirização eficien
 Simule cenários e aumente a eficiência operacional com modelos de Digital Twin para decisões mais rápidas e precisas.
 
 🦺 Alavancagem de Segurança
-Reduza riscos com visão computacional para monitorar EPIs, prever incidentes e reforçar a cultura de segurança no trabalho.
+Reduza riscos com visão computacional para monitorar EPIs, previsão incidentes e reforço da cultura de segurança no trabalho.
 
 Mapeamento
 de Requisitos

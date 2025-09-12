@@ -41,8 +41,7 @@ const HomeSection = () => {
 
             <p className="text-white text-base font-normal leading-relaxed max-w-lg">
               Somos a aceleradora digital que traz diferenciais de alto impacto
-              para o seu negócio. Alavanque seu negócio com ferramentas
-              personalizadas.
+              para o seu negócio.
             </p>
 
             <div>

@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-[#464E4E]/15 z-50">
+    <header className="fixed top-0 left-0 w-full bg-[#464E4E]/100 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 min-h-[90px]">
           {/* Left Side: Logo and Navigation */}

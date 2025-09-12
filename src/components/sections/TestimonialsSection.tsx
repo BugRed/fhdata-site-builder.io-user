@@ -102,8 +102,8 @@ const TestimonialsSection = () => {
         flex-shrink-0 transition-all duration-500 ease-in-out relative
         ${
           position === "center"
-            ? "w-full md:w-[500px] h-[250px] z-20"
-            : "w-[380px] h-[220px] z-10"
+            ? "w-full max-w-[min(90vw,500px)] min-h-[220px] z-20"
+            : "w-full max-w-[min(80vw,380px)] min-h-[200px] z-10"
         }
         ${!isActive ? "blur-[2px] opacity-60" : ""}
         ${
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
     >
       <div
         className={`
-        bg-logistics-bg rounded-[30px] shadow-card w-full h-full relative
+        bg-logistics-bg rounded-[30px] shadow-card w-full h-full relative overflow-hidden
         ${
           position === "center"
             ? "shadow-[0_8px_12px_6px_rgba(0,0,0,0.15),0_4px_4px_0_rgba(0,0,0,0.30)] p-6 md:p-8"
@@ -139,7 +139,7 @@ const TestimonialsSection = () => {
         <div className="space-y-4">
           <blockquote
             className={`
-            text-yellow-100 leading-relaxed
+            text-yellow-100 leading-relaxed line-clamp-4 md:line-clamp-5
             ${position === "center" ? "text-base" : "text-sm"}
           `}
           >

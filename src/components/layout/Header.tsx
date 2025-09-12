@@ -79,7 +79,7 @@ const Header = () => {
               {/* Search Dropdown */}
               {isSearchOpen && (
                 <div
-                  className="absolute right-0 top-full mt-2 w-80 bg-card rounded-lg shadow-card border border-border p-4"
+                  className="absolute right-0 top-full mt-2 w-[min(90vw,20rem)] bg-card rounded-lg shadow-card border border-border p-4"
                   onMouseEnter={() => setIsSearchOpen(true)}
                   onMouseLeave={() => setIsSearchOpen(false)}
                 >

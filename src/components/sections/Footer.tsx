@@ -65,10 +65,10 @@ const Footer = () => {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8 sm:gap-12 items-start">
             {/* Left Column - Title and Description */}
             <div className="space-y-6">
-              <h2 className="text-white text-3xl font-bold leading-tight">
+              <h2 className="text-white text-[clamp(1.5rem,3.2vw,2rem)] font-bold leading-tight">
                 PRONTO PARA TRANSFORMAR SEUS DADOS?
               </h2>
               <p className="text-white text-lg leading-relaxed max-w-lg">
@@ -152,7 +152,7 @@ const Footer = () => {
       {/* Contact Information Section */}
       <div className="bg-logistics-bg py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
             {/* Contact Info */}
             <div className="space-y-6">
               <h3 className="text-white text-lg font-bold">Entre em contato</h3>

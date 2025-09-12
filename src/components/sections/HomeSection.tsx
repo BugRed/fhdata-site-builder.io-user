@@ -33,7 +33,7 @@ const HomeSection = () => {
               <p className="text-base font-bold text-[#FAF6E6] tracking-wide uppercase">
                 REVOLUCIONE SUA GESTÃO
               </p>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight max-w-md font-avenir">
+              <h1 className="text-[clamp(1.75rem,5vw,3rem)] font-extrabold text-foreground leading-tight max-w-md font-avenir">
                 Transforme dados em decisões de
                 <span className="block text-primary">alto impacto</span>
               </h1>
@@ -92,7 +92,7 @@ const HomeSection = () => {
           {/* Alinhado verticalmente com o H1 */}
           <div className="hidden lg:flex flex-col justify-between gap-6 lg:items-center lg:pr-0 xl:pr-20 2xl:pr-0 mt-0 lg:col-span-1">
             {/* Primeira linha - 'Dados' alinhado à esquerda - altura inicial do H1 */}
-            <div className="flex justify-start w-80">
+            <div className="flex justify-start w-full max-w-[90vw] sm:max-w-xs">
               <MagicButton
                 variant="floating"
                 side="left"
@@ -116,7 +116,7 @@ const HomeSection = () => {
             </div>
 
             {/* Terceira linha - 'Analytics' alinhado à esquerda - altura final do H1 */}
-            <div className="flex justify-start w-80">
+            <div className="flex justify-start w-full max-w-[90vw] sm:max-w-xs">
               <MagicButton
                 variant="floating"
                 side="left"

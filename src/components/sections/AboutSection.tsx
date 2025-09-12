@@ -8,21 +8,20 @@ const AboutSection = () => {
   return (
     <section id="about" className="bg-background">
       <div
-        className="container border rounded-3xl 
-             mt-[112px] mb-10 
-             px-12 py-16
-             max-w-[calc(100%-226px)]
-             max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-1"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 border rounded-3xl
+             mt-[112px] mb-10
+             py-16
+             max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"
       >
         {/* About Section */}
         <div className="text-center space-y-6">
-          <h2 className="text-4xl font-medium text-foreground">
+          <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] font-medium text-foreground">
             ALAVANQUE SEU NEGÓCIO
           </h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 mt-12">
             {/* Coluna 1 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-[clamp(1rem,2.5vw,1.25rem)] font-bold text-white">
                 Mais rentabilidade
               </h3>
               <p className="text-muted-foreground text-base leading-relaxed">
@@ -33,7 +32,7 @@ const AboutSection = () => {
 
             {/* Coluna 2 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-xl font-bold text-white">Redução de custo</h3>
+              <h3 className="text-[clamp(1rem,2.5vw,1.25rem)] font-bold text-white">Redução de custo</h3>
               <p className="text-muted-foreground text-base leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.
@@ -42,7 +41,7 @@ const AboutSection = () => {
 
             {/* Coluna 3 */}
             <div className="space-y-3 text-left">
-              <h3 className="text-xl font-bold text-white">Mais velocidade</h3>
+              <h3 className="text-[clamp(1rem,2.5vw,1.25rem)] font-bold text-white">Mais velocidade</h3>
               <p className="text-muted-foreground text-base leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
                 perspiciatis unde omnis iste natus error sit voluptatem.

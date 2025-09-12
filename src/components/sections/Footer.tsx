@@ -55,7 +55,7 @@ const Footer = () => {
       {/* Contact Form Section with Background */}
       <div
         id="contact-form"
-        className="relative py-20 rounded-3xl mx-4 sm:mx-6 lg:mx-8 mb-16"
+        className="relative py-20 rounded-3xl mx-4 sm:mx-6 lg:mx-8 mb-16 overflow-hidden"
         style={{
           backgroundImage:
             "url('https://api.builder.io/api/v1/image/assets/TEMP/88269a69ae6a8a4b86d7acd817252d4279b94f3a?width=2432')",
@@ -65,13 +65,13 @@ const Footer = () => {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8 sm:gap-12 items-start">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 sm:gap-12 items-start">
             {/* Left Column - Title and Description */}
             <div className="space-y-6">
-              <h2 className="text-white text-[clamp(1.5rem,3.2vw,2rem)] font-bold leading-tight">
+              <h2 className="text-white text-[clamp(1rem,4vw,2rem)] font-bold leading-tight overflow-hidden break-words">
                 PRONTO PARA TRANSFORMAR SEUS DADOS?
               </h2>
-              <p className="text-white text-lg leading-relaxed max-w-lg">
+              <p className="text-white leading-relaxed max-w-lg text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
                 Agende um diagnóstico gratuito e personalizado e descubra como
                 podemos potencializar seu negócio com dados
               </p>
@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="space-y-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">
+                  <label className="text-white text-base font-normal overflow-hidden break-words">
                     Nome
                   </label>
                   <Input
@@ -89,13 +89,13 @@ const Footer = () => {
                     placeholder="Seu nome"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">
+                  <label className="text-white text-base font-normal overflow-hidden break-words">
                     E-mail
                   </label>
                   <Input
@@ -104,13 +104,13 @@ const Footer = () => {
                     placeholder="Seu e-mail"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">
+                  <label className="text-white text-base font-normal overflow-hidden break-words">
                     Contato
                   </label>
                   <Input
@@ -118,13 +118,13 @@ const Footer = () => {
                     placeholder="(xx) xxxx-xxxx"
                     value={formData.contact}
                     onChange={handleInputChange}
-                    className="bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-white text-base font-normal">
+                  <label className="text-white text-base font-normal overflow-hidden break-words">
                     Nome da empresa
                   </label>
                   <Input
@@ -132,14 +132,14 @@ const Footer = () => {
                     placeholder="Nome da empresa"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
                     required
                   />
                 </div>
 
                 <Button
                   variant="hero"
-                  className="group font-bold w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base"
+                  className="group font-bold w-full max-w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base overflow-hidden break-words text-center"
                 >
                   Agendar diagnóstico gratuito
                 </Button>

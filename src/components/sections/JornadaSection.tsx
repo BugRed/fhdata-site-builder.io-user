@@ -8,7 +8,7 @@ const JornadaSection = () => {
   return (
     <section id="jorney" className="bg-background">
       <div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
+        className="container px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
              mt-0 mb-10
              pt-10 pb-16
              max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"

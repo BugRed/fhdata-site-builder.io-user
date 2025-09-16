@@ -82,16 +82,16 @@ const ProductsSection = () => {
               >
                 <div className="text-center space-y-1 overflow-hidden">
                   <h3
-                    className="text-primary 
+                    className="text-creme 
                          text-[clamp(0.6rem,1.8vw,1rem)] 
-                         font-extrabold leading-tight line-clamp-2 break-words"
+                         font-extrabold leading-tight break-words"
                   >
                     {sector.title}
                   </h3>
                   <p
-                    className="text-primary 
+                    className="text-creme 
                         text-[clamp(0.5rem,1.5vw,0.9rem)] 
-                        leading-snug line-clamp-3 break-words"
+                        leading-snug break-words"
                   >
                     {sector.description}
                   </p>

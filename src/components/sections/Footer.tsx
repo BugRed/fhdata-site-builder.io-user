@@ -232,6 +232,32 @@ const Footer = () => {
                   <Linkedin className="w-6 h-6" />
                 </a>
               </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-foreground mb-3">
+                  ATENDIMENTO
+                </h4>
+                <div className="flex flex-col space-y-2">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Terms of Use
+                  </a>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    FAQ
+                  </a>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Report Issues
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

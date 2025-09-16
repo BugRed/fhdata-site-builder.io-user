@@ -67,43 +67,24 @@ const Header = () => {
 
           {/* Right Side: Search and Contact */}
           <div className="hidden md:flex items-center space-x-8">
-            {/* Search Icon with Hover Functionality */}
+            {/* Search Input with Figma Design */}
             <div className="relative">
-              <button
-                className="text-yellow-100 hover:text-primary transition-colors p-2"
-                onMouseEnter={() => setIsSearchOpen(true)}
-                onMouseLeave={() => setIsSearchOpen(false)}
-              >
-                <span className="material-symbols-light text-xl">search</span>
-              </button>
-
-              {/* Search Dropdown */}
-              {isSearchOpen && (
-                <div
-                  className="absolute right-0 top-full mt-2 w-[min(90vw,20rem)] bg-card rounded-lg shadow-card border border-border p-4"
-                  onMouseEnter={() => setIsSearchOpen(true)}
-                  onMouseLeave={() => setIsSearchOpen(false)}
-                >
-                  <form onSubmit={handleSearch} className="space-y-3">
-                    <Input
+              <form onSubmit={handleSearch} className="relative">
+                <div className="flex items-center w-[303px] h-[50px] bg-[#03120C] rounded-[32px] shadow-[0_4px_12px_rgba(13,10,44,0.06)]">
+                  <div className="flex-1 px-4">
+                    <input
                       type="text"
-                      placeholder="Digite sua busca..."
+                      placeholder="Procurar..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-background border-border text-foreground"
-                      autoFocus
+                      className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] font-['Poppins'] text-lg font-normal outline-none border-none"
                     />
-                    <Button
-                      type="submit"
-                      variant="default"
-                      size="sm"
-                      className="w-full"
-                    >
-                      Buscar
-                    </Button>
-                  </form>
+                  </div>
+                  <div className="flex items-center justify-center p-[10px]">
+                    <Search className="w-6 h-6 text-[#B8C1BF]" />
+                  </div>
                 </div>
-              )}
+              </form>
             </div>
 
             <Link to="contact-form" smooth={true} duration={500}>

@@ -2,7 +2,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import emailjs from "@emailjs/browser";
-import { MapPin, Phone, Mail, Instagram, Copyright, Linkedin, CheckCircle, XCircle } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Copyright,
+  Linkedin,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
 import { Link } from "react-scroll";
 
 const Footer = () => {
@@ -14,14 +23,18 @@ const Footer = () => {
     role: "",
   });
 
-  const [popup, setPopup] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [popup, setPopup] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
 
   const navItems = [
     { name: "Home", to: "home" },
     { name: "Soluções", to: "solucoes" },
-    { name: "Cases", to: "cases" },
+    // { name: "Cases", to: "cases" },
+    // { name: "Produtos", to: "produtos" },
+    { name: "Quem confia", to: "trust" },
     { name: "Quem somos", to: "about" },
-    { name: "Produtos", to: "produtos" },
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,19 +51,30 @@ const Footer = () => {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    emailjs.send(serviceId, templateId, formData, publicKey)
-      .then(
-        () => {
-          setPopup({ message: "Formulário enviado com sucesso!", type: "success" });
-          setFormData({ name: "", email: "", contact: "", company: "", role: "" });
+    emailjs.send(serviceId, templateId, formData, publicKey).then(
+      () => {
+        setPopup({
+          message: "Formulário enviado com sucesso!",
+          type: "success",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          contact: "",
+          company: "",
+          role: "",
+        });
 
-          setTimeout(() => setPopup(null), 5000); // popup desaparece em 5s
-        },
-        () => {
-          setPopup({ message: "Ocorreu um erro ao enviar o formulário.", type: "error" });
-          setTimeout(() => setPopup(null), 5000);
-        }
-      );
+        setTimeout(() => setPopup(null), 5000); // popup desaparece em 5s
+      },
+      () => {
+        setPopup({
+          message: "Ocorreu um erro ao enviar o formulário.",
+          type: "error",
+        });
+        setTimeout(() => setPopup(null), 5000);
+      }
+    );
   };
 
   return (
@@ -97,28 +121,34 @@ const Footer = () => {
 
             <div className="space-y-6">
               <form onSubmit={handleSubmit} className="space-y-4">
-                {["name", "email", "contact", "company", "role"].map((field) => (
-                  <div key={field} className="space-y-2">
-                    <label className="text-white text-base font-normal capitalize">
-                      {field === "role" ? "Cargo" : field === "company" ? "Nome da empresa" : field}
-                    </label>
-                    <Input
-                      name={field}
-                      type={field === "email" ? "email" : "text"}
-                      placeholder={
-                        field === "role"
-                          ? "Seu cargo"
+                {["name", "email", "contact", "company", "role"].map(
+                  (field) => (
+                    <div key={field} className="space-y-2">
+                      <label className="text-white text-base font-normal capitalize">
+                        {field === "role"
+                          ? "Cargo"
                           : field === "company"
                           ? "Nome da empresa"
-                          : `Seu ${field}`
-                      }
-                      value={formData[field as keyof typeof formData]}
-                      onChange={handleInputChange}
-                      className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
-                      required
-                    />
-                  </div>
-                ))}
+                          : field}
+                      </label>
+                      <Input
+                        name={field}
+                        type={field === "email" ? "email" : "text"}
+                        placeholder={
+                          field === "role"
+                            ? "Seu cargo"
+                            : field === "company"
+                            ? "Nome da empresa"
+                            : `Seu ${field}`
+                        }
+                        value={formData[field as keyof typeof formData]}
+                        onChange={handleInputChange}
+                        className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                        required
+                      />
+                    </div>
+                  )
+                )}
 
                 <div className="flex justify-center">
                   <Button
@@ -127,7 +157,9 @@ const Footer = () => {
                     className="group font-bold px-6 sm:px-10 md:px-12 py-4 rounded-full text-base text-center"
                   >
                     <span className="block sm:hidden">Agendar</span>
-                    <span className="hidden sm:block">Agendar diagnóstico gratuito</span>
+                    <span className="hidden sm:block">
+                      Agendar diagnóstico gratuito
+                    </span>
                   </Button>
                 </div>
               </form>
@@ -151,11 +183,15 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-6 h-6 text-primary flex-shrink-0" />
-                  <span className="text-white text-base">+55 (81) 99133-0615</span>
+                  <span className="text-white text-base">
+                    +55 (81) 99133-0615
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-4 text-primary flex-shrink-0" />
-                  <span className="text-white text-base">contato@fhdataanalysis.com.br</span>
+                  <span className="text-white text-base">
+                    contato@fhdataanalysis.com.br
+                  </span>
                 </div>
               </div>
             </div>
@@ -178,7 +214,9 @@ const Footer = () => {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-bold text-foreground mb-4">Redes Sociais</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Redes Sociais
+              </h3>
               <div className="flex space-x-4">
                 <a
                   href="https://www.instagram.com/fh.data/"

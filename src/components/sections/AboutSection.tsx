@@ -27,13 +27,13 @@ const AboutSection = () => {
           </div>
 
           {/* Coluna direita: placeholder para imagem ou conteúdo extra */}
-          <div className="relative border rounded-2xl p-6 max-w-lg bg-[#464E4E] h-72 overflow-hidden">
+          <div className="relative border rounded-2xl p-0 max-w-lg bg-[#464E4E] h-72 overflow-hidden">
             <img
               src="/img/cubes.png"
               alt="Cubos flutuando"
-              className="absolute inset-0 w-full h-full object-contain opacity-90"
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
-            <p className="absolute bottom-4 right-4 z-10 text-white font-extrabold text-lg text-right max-w-xs line-clamp-3">
+            <p className="absolute bottom-4 right-4 z-10 text-white font-extrabold text-lg text-right max-w-xs line-clamp-3 opacity-100">
               + DE 330 SOLUÇÕES DE <span className="text-primary">IA</span> E <span className="text-primary">ANALYTICS</span> DESENVOLDIDAS EM DIFERENTES ÀREAS
             </p>
           </div>

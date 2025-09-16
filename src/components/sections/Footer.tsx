@@ -27,6 +27,7 @@ const Footer = () => {
     email: "",
     contact: "",
     company: "",
+    role: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -137,9 +138,29 @@ const Footer = () => {
                   />
                 </div>
 
+                {/* Novo campo: Cargo */}
+                <div className="space-y-2">
+                  <label className="text-white text-base font-normal overflow-hidden break-words">
+                    Cargo
+                  </label>
+                  <Input
+                    name="role"
+                    placeholder="Seu cargo"
+                    value={formData.role}
+                    onChange={handleInputChange}
+                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                    required
+                  />
+                </div>
+              </form>
+
+              {/* Botão centralizado abaixo do form */}
+              <div className="flex justify-center">
                 <Button
-                  variant="hero"
-                  className="group font-bold w-full max-w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 rounded-full text-base overflow-hidden break-words text-center"
+                  type="submit"
+                  form="contact-form"
+                  variant="forms"
+                  className="group font-bold px-6 sm:px-10 md:px-12 py-4 rounded-full text-base text-center"
                 >
                   {/* Mostra só em telas pequenas */}
                   <span className="block sm:hidden">Agendar</span>
@@ -148,7 +169,7 @@ const Footer = () => {
                     Agendar diagnóstico gratuito
                   </span>
                 </Button>
-              </form>
+              </div>
             </div>
           </div>
         </div>

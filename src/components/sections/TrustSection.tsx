@@ -20,7 +20,7 @@ const TrustSection = () => {
   ];
   /* seria bom aqui o link para a empresa que confia */
   return (
-    <section id="about" style={{ backgroundColor: "#252525" }}>
+    <section id="trust" style={{ backgroundColor: "#252525" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Section - Grid 4x3 */}
         <div className="text-center">
@@ -41,7 +41,7 @@ const TrustSection = () => {
                 <img
                   src={client.src}
                   alt={client.alt}
-                  className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-110"
+                  className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-150"
                 />
               </div>
             ))}

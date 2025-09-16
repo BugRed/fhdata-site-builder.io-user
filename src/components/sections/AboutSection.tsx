@@ -3,10 +3,10 @@ import { Button } from "../ui/button";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-background">
+    <section id="about" className="bg-background py-16">
       <div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
-             mt-[112px] mb-10
+        className="container px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
+             mb-10
              py-16
              max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"
       >
@@ -27,15 +27,14 @@ const AboutSection = () => {
           </div>
 
           {/* Coluna direita: placeholder para imagem ou conteúdo extra */}
-          <div className="flex justify-center items-center border rounded-2xl p-6 max-w-lg bg-[#464E4E] h-72 text-center">
+          <div className="relative border rounded-2xl p-6 max-w-lg bg-[#464E4E] h-72 overflow-hidden">
             <img
-              src="/img/map.png"
-              alt="mapa do Brazil"
-              className="w-full h-full object-contain"
+              src="/img/cubes.png"
+              alt="Cubos flutuando"
+              className="absolute inset-0 w-full h-full object-contain opacity-90"
             />
-            <p>
-              + de 330 soluções de IA e Analytics desenvolvidas em diferentes
-              áreas
+            <p className="absolute bottom-4 right-4 z-10 text-white font-extrabold text-lg text-right max-w-xs line-clamp-3">
+              + DE 330 SOLUÇÕES DE <span className="text-primary">IA</span> E <span className="text-primary">ANALYTICS</span> DESENVOLDIDAS EM DIFERENTES ÀREAS
             </p>
           </div>
         </div>

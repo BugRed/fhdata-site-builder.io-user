@@ -23,13 +23,13 @@ const Index = () => {
       {/* Main content sections */}
       <main>
         <HomeSection/>
-        <AboutSection />
         <JornadaSection />
         <SolutionsSection />
         <ProductsSection />
-        <CasesSection />
+        {/* <CasesSection /> */}
         <TrustSection />
-        <TestimonialsSection />
+        <AboutSection />
+        {/* <TestimonialsSection /> */}
       </main>
       
       {/* Footer with contact form */}

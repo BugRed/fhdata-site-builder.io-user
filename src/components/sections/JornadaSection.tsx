@@ -6,17 +6,17 @@ import { Button } from "../ui/button";
  */
 const JornadaSection = () => {
   return (
-    <section id="about" className="bg-background">
+    <section id="jorney" className="bg-background">
       <div
         className="container mx-auto px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
-             mt-[112px] mb-10
-             py-16
+             mt-0 mb-10
+             pt-10 pb-16
              max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"
       >
         {/* About Section */}
         <div className="text-center space-y-6">
           <h2 className="text-[clamp(1rem,4vw,2rem)] font-medium text-foreground overflow-hidden break-words">
-            JORNADA DE CRESCIMENTO
+            ALAVANQUE SEU NEGÓCIO
           </h2>
           <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 mt-12">
             {/* Coluna 1 */}
@@ -25,7 +25,8 @@ const JornadaSection = () => {
                 Inicio da jornada em dados & IA
               </h3>
               <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                O primeiro passo para sair do escuro e começar a operar com inteligência de dados real.
+                O primeiro passo para sair do escuro e começar a operar com
+                inteligência de dados real.
               </p>
             </div>
 
@@ -45,7 +46,8 @@ const JornadaSection = () => {
                 IA no DNA da Empresa
               </h3>
               <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                Inteligência de dados como parte do DNA da empresa e vantagem competitiva definitiva.
+                Inteligência de dados como parte do DNA da empresa e vantagem
+                competitiva definitiva.
               </p>
             </div>
           </div>

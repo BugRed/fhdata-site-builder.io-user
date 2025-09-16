@@ -15,7 +15,7 @@ const ProductsSection = () => {
       title: "COMERCIAL",
       description:
         "Impulsione vendas com previsão de demanda, precificação inteligente e recomendações personalizadas de produtos, além de concessão de crédito mais seguras.",
-      image: "/img/img-right.png",
+      image: "/img/img-left.png",
     },
     {
       title: "LOGÍSTICA & ESTOQUE",
@@ -32,7 +32,7 @@ const ProductsSection = () => {
       title: "SEGURANÇA DO TRABALHO",
       description:
         "Reduza riscos com visão computacional para monitorar EPIs, previsão incidentes e reforço da cultura de segurança no trabalho.",
-      image: "/img/img-left.png",
+      image: "/img/img-right.png",
     },
   ];
 

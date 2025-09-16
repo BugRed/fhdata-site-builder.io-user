@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-soft transition-all duration-300",
         hero: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card font-semibold px-8 py-6 text-base transition-all duration-300",
+        forms: "bg-[#FAF6E6] text-primary-dark hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card font-semibold px-8 py-6 text-base transition-all duration-300",
         floating: "bg-primary text-primary-foreground hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card rounded-full px-6 py-3 font-medium transition-all duration-300",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",

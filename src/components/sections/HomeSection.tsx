@@ -12,7 +12,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-background -mt-[122px] pt-[122px]"
+      className="relative min-h-[calc(100vh-20px)] bg-background -mt-[122px] pt-[122px] py-16"
     >
       {/* Background Image with Overlay */}
       <div
@@ -25,8 +25,9 @@ const HomeSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-500/20 via-transparent to-background"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-start py-16 min-h-screen">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-0">
+        <div className="grid lg:grid-cols-2 gap-12 items-start pt-16 pb-0">
+
           {/* Left Column */}
           <div className="space-y-8 lg:pl-0 xl:pl-20 2xl:pl-0">
             <div className="space-y-4">

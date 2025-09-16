@@ -37,7 +37,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="produtos" className="py-16 bg-background">
+    <section id="produtos" className="bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-foreground mb-4">

@@ -7,7 +7,7 @@ import { ArrowRight, Database, Brain, BarChart3 } from "lucide-react";
  */
 const SolutionsSection = () => {
   return (
-    <section id="solucoes" className="py-11">
+    <section id="solucoes" className="">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-[clamp(1.75rem,5vw,2.5rem)] font-bold text-foreground mb-4">

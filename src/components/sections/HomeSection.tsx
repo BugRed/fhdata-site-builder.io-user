@@ -12,7 +12,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-20px)] bg-background -mt-[122px] pt-[122px] py-7"
+      className="relative min-h-[calc(100vh-20px)] bg-background -mt-[122px] pt-[122px] py-8"
     >
       {/* Background Image with Overlay */}
       <div

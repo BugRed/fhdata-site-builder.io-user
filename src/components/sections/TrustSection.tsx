@@ -21,16 +21,16 @@ const TrustSection = () => {
   /* seria bom aqui o link para a empresa que confia */
   return (
     <section id="trust" style={{ backgroundColor: "#252525" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         {/* Trust Section - Grid 4x3 */}
         <div className="text-center">
           <h3 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-foreground mb-8 py-5">
-            QUEM CONFIA
+            QUEM CONFIA NA GENTE
           </h3>
           <div
             className="
   grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 
-  gap-6 items-center opacity-60 py-5
+  gap-x-6 gap-y-12 items-center opacity-60
 "
           >
             {clients.map((client, index) => (
@@ -41,7 +41,7 @@ const TrustSection = () => {
                 <img
                   src={client.src}
                   alt={client.alt}
-                  className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-150"
+                  className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-150"
                 />
               </div>
             ))}

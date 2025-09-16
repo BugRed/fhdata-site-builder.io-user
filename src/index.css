@@ -315,3 +315,93 @@ Extraído do design Figma da FH Data
   .line-clamp-4 { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .line-clamp-5 { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
 }
+
+/* FH Data Design System Utilities - Baseado no Figma */
+@layer utilities {
+  /* Tipografia Figma */
+  .font-poppins { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .font-source-sans { font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+  /* Cores específicas do Figma */
+  .text-fh-green { color: hsl(var(--primary)); }                    /* #408E86 */
+  .text-fh-green-secondary { color: hsl(var(--secondary-green)); }  /* #2AC59E */
+  .text-fh-cream { color: hsl(var(--text-cream)); }                 /* #FAF6E6 */
+  .text-fh-muted { color: hsl(var(--muted-foreground)); }           /* #B8C1BF */
+
+  .bg-fh-green { background-color: hsl(var(--primary)); }           /* #408E86 */
+  .bg-fh-green-secondary { background-color: hsl(var(--secondary-green)); } /* #2AC59E */
+  .bg-fh-dark { background-color: hsl(var(--background)); }         /* #0B0A0A */
+  .bg-fh-card { background-color: hsl(var(--card)); }               /* #252525 */
+  .bg-fh-cream { background-color: hsl(var(--text-cream)); }        /* #FAF6E6 */
+
+  /* Bordas do Figma */
+  .border-fh-gray { border-color: hsl(var(--border-gray)); }        /* #7B7B7B */
+  .rounded-fh-large { border-radius: var(--radius-large); }         /* 40px */
+  .rounded-fh-medium { border-radius: var(--radius-medium); }       /* 10px */
+
+  /* Sombras do Figma */
+  .shadow-fh-soft { box-shadow: var(--shadow-soft); }
+  .shadow-fh-card { box-shadow: var(--shadow-card); }
+
+  /* Botões do Figma */
+  .btn-fh-primary {
+    @apply bg-fh-green text-fh-cream font-source-sans font-bold rounded-fh-large px-6 py-3;
+    @apply hover:bg-fh-green/90 transition-all duration-300;
+    font-size: 15px;
+    line-height: 158.7%;
+    letter-spacing: -0.45px;
+  }
+
+  .btn-fh-secondary {
+    @apply bg-fh-cream text-primary font-source-sans font-bold rounded-fh-large px-6 py-3;
+    @apply hover:bg-fh-cream/90 transition-all duration-300;
+    font-size: 15px;
+    line-height: 158.7%;
+    letter-spacing: -0.45px;
+  }
+
+  /* Cards do Figma */
+  .card-fh-dark {
+    @apply bg-fh-card border border-fh-gray rounded-fh-large p-8;
+    @apply shadow-fh-card;
+  }
+
+  .card-fh-green {
+    @apply bg-fh-green rounded-fh-medium p-8;
+    @apply shadow-fh-card;
+  }
+
+  /* Títulos do Figma */
+  .title-fh-section {
+    @apply font-poppins font-bold text-2xl text-white text-center;
+    line-height: 120%;
+    letter-spacing: -0.72px;
+  }
+
+  .title-fh-card {
+    @apply font-poppins font-bold text-2xl text-white;
+    line-height: 120%;
+    letter-spacing: -0.72px;
+  }
+
+  /* Texto corpo do Figma */
+  .text-fh-body {
+    @apply font-poppins text-lg text-fh-muted;
+    line-height: 150%;
+  }
+
+  .text-fh-body-justify {
+    @apply font-poppins text-lg text-fh-muted text-justify;
+    line-height: 150%;
+  }
+
+  /* Gradiente hero */
+  .bg-fh-hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  /* Transições suaves */
+  .transition-fh {
+    transition: var(--transition-smooth);
+  }
+}

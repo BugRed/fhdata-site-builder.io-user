@@ -20,7 +20,13 @@ const JornadaSection = () => {
           </h2>
           <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 mt-12">
             {/* Coluna 1 */}
-            <div className="space-y-3 text-left">
+            <div className="space-y-3 text-left relative">
+              {/* Esfera com número */}
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 bg-primary-dark rounded-full flex items-center justify-center">
+                  <span className="text-creme font-bold text-lg">1</span>
+                </div>
+              </div>
               <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
                 Inicio da jornada em dados & IA
               </h3>
@@ -31,7 +37,13 @@ const JornadaSection = () => {
             </div>
 
             {/* Coluna 2 */}
-            <div className="space-y-3 text-left">
+            <div className="space-y-3 text-left relative">
+              {/* Esfera com número */}
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 bg-primary-dark rounded-full flex items-center justify-center">
+                  <span className="text-creme font-bold text-lg">2</span>
+                </div>
+              </div>
               <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
                 Alavancagem com uso de dados & IA
               </h3>
@@ -41,7 +53,13 @@ const JornadaSection = () => {
             </div>
 
             {/* Coluna 3 */}
-            <div className="space-y-3 text-left">
+            <div className="space-y-3 text-left relative">
+              {/* Esfera com número */}
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 bg-primary-dark rounded-full flex items-center justify-center">
+                  <span className="text-creme font-bold text-lg">3</span>
+                </div>
+              </div>
               <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
                 IA no DNA da Empresa
               </h3>

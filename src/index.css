@@ -244,7 +244,7 @@ Extraído do design Figma da FH Data
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   }
 
   .material-symbols-light {

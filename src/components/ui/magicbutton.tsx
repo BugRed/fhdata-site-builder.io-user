@@ -5,13 +5,13 @@ import { Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-normal break-words rounded-md text-sm sm:text-base font-medium max-w-[90vw] ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-normal break-words text-sm sm:text-base font-bold max-w-[90vw] ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-card font-semibold px-8 py-6 text-base",
-        floating: "bg-primary text-white hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary shadow-card rounded-full px-6 py-3 font-medium transition-all duration-300",
+        floating: "bg-transparent border border-[#FAF6E6] text-[#FAF6E6] hover:border-primary-dark hover:text-primary-dark rounded-[10px] px-[21px] py-[13px] font-bold text-[15px] leading-[158.7%] tracking-[-0.45px] transition-all duration-300 font-['Source_Sans_Pro'] h-[50px] w-[181px]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",

@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-background py-16">
+    <section id="about" className="bg-background py-8">
       <div
         className="container px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
              mb-10

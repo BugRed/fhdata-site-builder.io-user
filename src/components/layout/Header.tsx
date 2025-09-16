@@ -27,7 +27,6 @@ const Header = () => {
     e.preventDefault();
     // Implement search functionality here
     console.log("Searching for:", searchQuery);
-    setIsSearchOpen(false);
     setSearchQuery("");
   };
 

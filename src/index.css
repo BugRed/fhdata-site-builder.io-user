@@ -16,52 +16,65 @@
 
 /* FH Data Design System - Professional data company landing page
 All colors MUST be HSL for consistency and theming.
+Extraído do design Figma da FH Data
 */
 
 @layer base {
   :root {
-    /* Dark theme background from Figma */
-    --background: 26 26% 7%;        /* #0B0A0A dark background */
-    --foreground: 0 0% 100%;        /* White text */
+    /* Cores principais do design Figma */
+    --background: 6 9% 4%;          /* #0B0A0A fundo escuro principal */
+    --foreground: 0 0% 100%;        /* #FFF texto branco */
 
-    /* FH Data Green Palette from Figma */
-    --primary: 174 38% 40%;         /* #408E86 main green color */
-    --primary-dark: 174 38% 32%;    /* Slightly darker green */
-    --primary-light: 174 38% 85%;   /* Light green for form background */
-    --primary-foreground: 0 0% 100%; /* White text on green */
+    /* Paleta Verde FH Data (do Figma) */
+    --primary: 174 38% 40%;         /* #408E86 verde principal */
+    --primary-dark: 174 38% 32%;    /* Verde mais escuro */
+    --primary-light: 174 38% 85%;   /* Verde claro para fundos */
+    --primary-foreground: 48 71% 93%; /* #FAF6E6 texto claro em botões */
 
-    /* Dark theme cards and components */
-    --card: 0 0% 15%;               /* #252525 dark gray cards */
-    --card-foreground: 0 0% 100%;   /* White text on cards */
+    /* Verde secundário/destaque do Figma */
+    --secondary-green: 167 73% 46%;  /* #2AC59E verde de destaque */
+    --secondary-green-foreground: 0 0% 100%; /* Texto branco sobre verde destaque */
 
-    --popover: 0 0% 15%;
+    /* Fundos e cards do design */
+    --card: 0 0% 15%;               /* #252525 fundo cards escuros */
+    --card-foreground: 0 0% 100%;   /* #FFF texto em cards */
+
+    --popover: 0 0% 15%;            /* #252525 */
     --popover-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 0 0% 15%;          /* #252525 */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 75%;   /* Light gray for muted text */
+    /* Texto secundário do Figma */
+    --muted: 0 0% 15%;              /* #252525 */
+    --muted-foreground: 194 7% 73%; /* #B8C1BF texto secundário */
 
     --accent: 167 73% 15%;
     --accent-foreground: 0 0% 100%;
 
-    /* Custom design tokens from Figma */
-    --form-bg: 174 38% 40%;         /* Green form background #408E86 */
-    --logistics-bg: 0 0% 15%;       /* Dark card background #252525 */
+    /* Tokens específicos do design Figma */
+    --form-bg: 174 38% 40%;         /* #408E86 fundo verde formulários */
+    --logistics-bg: 0 0% 15%;       /* #252525 fundo cards logística */
+    --border-gray: 0 0% 48%;        /* #7B7B7B bordas cinza */
+    --text-cream: 48 71% 93%;       /* #FAF6E6 texto creme em botões */
+
+    /* Gradientes e sombras do Figma */
     --hero-gradient: linear-gradient(135deg, hsl(174, 38%, 40%), hsl(174, 38%, 45%));
     --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.3);
     --shadow-card: 0 8px 12px 6px rgba(0, 0, 0, 0.15), 0 4px 4px 0 rgba(0, 0, 0, 0.30);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+    /* Raios de borda do Figma */
+    --radius-large: 2.5rem;         /* 40px para botões e cards principais */
+    --radius-medium: 0.625rem;      /* 10px para elementos menores */
+    --radius: 0.625rem;             /* 10px padrão */
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 30%;             /* Gray border for dark theme */
-    --input: 0 0% 15%;              /* Dark input background */
-    --ring: 174 38% 40%;            /* Green ring focus */
-
-    --radius: 0.5rem;
+    --border: 0 0% 48%;             /* #7B7B7B bordas do Figma */
+    --input: 0 0% 100%;             /* #FFF fundo inputs brancos */
+    --ring: 174 38% 40%;            /* #408E86 verde focus */
 
     --sidebar-background: 0 0% 98%;
 

@@ -121,7 +121,7 @@ const Footer = () => {
 
             <div className="space-y-6">
               <form onSubmit={handleSubmit} className="space-y-4">
-                {["name", "email", "contact", "company", "role"].map(
+                {["nome", "email", "contato", "company", "role"].map(
                   (field) => (
                     <div key={field} className="space-y-2">
                       <label className="text-white text-base font-normal capitalize">
@@ -139,6 +139,7 @@ const Footer = () => {
                             ? "Seu cargo"
                             : field === "company"
                             ? "Nome da empresa"
+                            : field === "contato" ? "(xx) xxxx-xxxx"
                             : `Seu ${field}`
                         }
                         value={formData[field as keyof typeof formData]}

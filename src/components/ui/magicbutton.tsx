@@ -43,49 +43,31 @@ export interface MagicButtonProps
 const MagicButton = React.forwardRef<HTMLButtonElement, MagicButtonProps>(
   ({ className, variant, size, asChild = false, children, onClick, side = 'left', ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    
-    // Função para lidar com o clique no container
-    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-      if (onClick) {
-        // Convertemos o evento de div para o tipo esperado pelo onClick original
-        onClick(e as any);
-      }
-    };
-    
+
     // Classes condicionais baseadas no lado escolhido (apenas para alinhamento do container)
-    const containerClasses = side === 'right' 
+    const containerClasses = side === 'right'
       ? "relative inline-block ml-auto" // Alinha à direita
       : "relative inline-block mr-auto"; // Alinha à esquerda
-    
+
     return (
       <div className={containerClasses}>
-        {/* Círculo branco SEMPRE no canto superior esquerdo */}
-        {/* Tamanho da esfera: ajustar w-4 h-4 para aumentar */}
-        {/* Box-shadow: ajustar shadow-[0_2px_8px_rgba(0,0,0,0.15)] para mudar cor/transparência */}
-        <div className="absolute -top-1 -left-1 w-4 h-4 bg-white rounded-full border border-gray-200 z-10 transition-all duration-300 ease-in-out group-hover:bg-black shadow-[0_2px_8px_rgba(0,0,0,0.15)]" />
-        
-        {/* Container clicável transparente com grupo para hover */}
-        <div className="group cursor-pointer" onClick={handleClick}>
-          {/* Botão interno centralizado com bordas totalmente arredondadas */}
-          {/* Box-shadow do botão: ajustar shadow-[0_4px_12px_rgba(0,0,0,0.25)] para mudar cor/transparência */}
-          <Comp 
-            className={cn(
-              buttonVariants({ variant, size }), 
-              "shadow-[0_4px_12px_rgba(0,0,0,0.25)] text-white", // Box-shadow preta e texto branco
-              className
-            )} 
-            ref={ref} 
-            {...props}
-          >
-            {children}
-          </Comp>
-          
-          {/* Círculo com animação de preenchimento SEMPRE no canto superior esquerdo */}
-          {/* Tamanho da esfera: ajustar w-4 h-4 para aumentar (mesmo valor do círculo acima) */}
-          <div className="absolute -top-1 -left-1 w-4 h-4 rounded-full overflow-hidden z-20 pointer-events-none">
-            <div className="w-full h-full bg-black rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out origin-center" />
-          </div>
+        {/* Ícone do canto superior esquerdo com fundo primary-dark */}
+        <div className="absolute -top-[6px] -left-[6px] w-6 h-6 bg-primary-dark rounded-xl flex items-center justify-center z-10">
+          <Lightbulb className="w-[14px] h-[14px] text-primary" />
         </div>
+
+        {/* Botão principal */}
+        <Comp
+          className={cn(
+            buttonVariants({ variant, size }),
+            className
+          )}
+          ref={ref}
+          onClick={onClick}
+          {...props}
+        >
+          {children}
+        </Comp>
       </div>
     );
   },

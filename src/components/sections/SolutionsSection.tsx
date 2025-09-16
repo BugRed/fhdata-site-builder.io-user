@@ -28,13 +28,11 @@ const SolutionsSection = () => {
                 Alavancagem de maturidade em dados & IA
               </h3>
             </div>
-            <p className="text-muted-foreground">
-              Mapeamento de processos e premissas necessárias para transformar
-              <strong className="font-primary">
-                {" "}
-                dados em diretrizes
-              </strong>{" "}
-              estratégicas de alto impacto
+            <p className="text-muted-foreground" style={{ wordSpacing: '0.7rem' }}>
+              Desenvolvimento de <span className="text-primary">estratégias</span> e roadmaps para 
+              <span className="text-primary"> elevar o nível</span> de
+              maturidade em <span className="text-primary">dados</span> e <span className="text-primary">inteligência artificial</span> da sua empresa,
+              gerando <span className="text-primary">insights competitivos</span> e <span className="text-primary">inovação</span>.
             </p>
           </div>
           {/* Second Card - Large (Center) */}
@@ -45,10 +43,10 @@ const SolutionsSection = () => {
                 Forecast HUB
               </h3>
             </div>
-            <p className="text-muted-foreground">
-              Integramos tecnologia e ROI com o Forecast HUB. Trazendo o
-              soluções de inteligência artificial que antecipam tendências e
-              otimizam seus resultados de negócio.
+            <p className="text-muted-foreground" style={{ wordSpacing: '0.7rem' }}>
+              Plataforma centralizada que integra e automatiza a <span className="text-primary">previsão de
+              resultados</span>, permitindo uma <span className="text-primary">tomada de decisão ágil</span> e um
+              <span className="text-primary"> planejamento estratégico proativo</span>.
             </p>
           </div>
 
@@ -61,14 +59,10 @@ const SolutionsSection = () => {
                 Governança e segurança e Data Viz
               </h3>
             </div>
-            <p className="text-muted-foreground">
-              Mitigar riscos com uma governança de dados e IA robusta e
-              certificada com às melhores práticas do mercado
-              <strong className="font-primary">
-                {" "}
-                dados em diretrizes
-              </strong>{" "}
-              estratégicas de alto impacto
+            <p className="text-muted-foreground " style={{ wordSpacing: '0.7rem' }}>
+              Criação de políticas de governança e segurança para garantir a
+              <span className="text-primary"> confiabilidade dos dados</span>, transformando-os em <span className="text-primary">visualizações claras </span>
+              e painéis de controle <span className="text-primary">intuitivos</span> para a gestão.
             </p>
           </div>
         </div>

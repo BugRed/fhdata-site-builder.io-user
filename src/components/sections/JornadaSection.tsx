@@ -76,12 +76,12 @@ const JornadaSection = () => {
           <Button
             variant="default"
             size="sm"
-            className="font-bold px-6 py-3 rounded-full overflow-hidden break-words text-center"
+            className="font-extralight px-6 py-3 rounded-full overflow-hidden break-words text-center"
           >
             {/* Texto para telas médias/grandes */}
-            <span className="hidden sm:inline">Entre em contato</span>
+            <span className="hidden sm:inline">Solicite um diagnóstico gratuito</span>
             {/* Texto curto para telas pequenas */}
-            <span className="inline sm:hidden">Contato</span>
+            <span className="inline sm:hidden">Solicitar</span>
           </Button>
         </Link>
       </div>

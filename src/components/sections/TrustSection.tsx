@@ -41,7 +41,7 @@ const TrustSection = () => {
                 <img
                   src={client.src}
                   alt={client.alt}
-                  className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-150"
+                  className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-150"
                 />
               </div>
             ))}

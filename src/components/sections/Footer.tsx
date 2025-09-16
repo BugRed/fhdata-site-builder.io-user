@@ -1,26 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Instagram,
-  Copyright,
-  Facebook,
-  Twitter,
-  Linkedin,
-  LinkedinIcon,
-  LucideLinkedin,
-  PhoneCall,
-} from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { MapPin, Phone, Mail, Instagram, Copyright, Linkedin, CheckCircle, XCircle } from "lucide-react";
 import { Link } from "react-scroll";
 
-/**
- * Footer component with contact form and company information
- * Features: Contact form, contact info, navigation links
- * Updated to match Figma design with dark theme and improved layout
- */
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -29,6 +13,16 @@ const Footer = () => {
     company: "",
     role: "",
   });
+
+  const [popup, setPopup] = useState<{ message: string; type: "success" | "error" } | null>(null);
+
+  const navItems = [
+    { name: "Home", to: "home" },
+    { name: "Soluções", to: "solucoes" },
+    { name: "Cases", to: "cases" },
+    { name: "Quem somos", to: "about" },
+    { name: "Produtos", to: "produtos" },
+  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -39,21 +33,45 @@ const Footer = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    emailjs.send(serviceId, templateId, formData, publicKey)
+      .then(
+        () => {
+          setPopup({ message: "Formulário enviado com sucesso!", type: "success" });
+          setFormData({ name: "", email: "", contact: "", company: "", role: "" });
+
+          setTimeout(() => setPopup(null), 5000); // popup desaparece em 5s
+        },
+        () => {
+          setPopup({ message: "Ocorreu um erro ao enviar o formulário.", type: "error" });
+          setTimeout(() => setPopup(null), 5000);
+        }
+      );
   };
 
-  const navItems = [
-    { name: "Home", to: "home" },
-    { name: "Soluções", to: "solucoes" },
-    { name: "Cases", to: "cases" },
-    { name: "Quem somos", to: "about" },
-    { name: "Produtos", to: "produtos" },
-  ];
-
   return (
-    <footer className="bg-background">
-      {/* Contact Form Section with Background */}
+    <footer className="bg-background relative">
+      {/* Popup */}
+      {popup && (
+        <div
+          className={`fixed top-5 right-5 z-50 flex items-center space-x-3 px-5 py-4 rounded-lg shadow-lg ${
+            popup.type === "success" ? "bg-primary-dark" : "bg-red-700"
+          }`}
+        >
+          {popup.type === "success" ? (
+            <CheckCircle className="w-6 h-6 text-creme" />
+          ) : (
+            <XCircle className="w-6 h-6 text-creme" />
+          )}
+          <span className="text-creme font-medium">{popup.message}</span>
+        </div>
+      )}
+
+      {/* Contact Form Section */}
       <div
         id="contact-form"
         className="relative py-20 rounded-3xl mx-4 sm:mx-6 lg:mx-8 mb-16 overflow-hidden"
@@ -67,119 +85,61 @@ const Footer = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 sm:gap-12 items-start">
-            {/* Left Column - Title and Description */}
             <div className="space-y-6">
-              <h2 className="text-white text-[clamp(1rem,4vw,2rem)] font-bold leading-tight overflow-hidden break-words">
+              <h2 className="text-white text-[clamp(1rem,4vw,2rem)] font-bold leading-tight">
                 PRONTO PARA TRANSFORMAR SEUS DADOS?
               </h2>
-              <p className="text-white leading-relaxed max-w-lg text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
+              <p className="text-white leading-relaxed max-w-lg text-[clamp(0.75rem,2.5vw,1rem)]">
                 Agende um diagnóstico gratuito e personalizado e descubra como
                 podemos potencializar seu negócio com dados
               </p>
             </div>
 
-            {/* Right Column - Form */}
             <div className="space-y-6">
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-white text-base font-normal overflow-hidden break-words">
-                    Nome
-                  </label>
-                  <Input
-                    name="name"
-                    placeholder="Seu nome"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
-                    required
-                  />
-                </div>
+                {["name", "email", "contact", "company", "role"].map((field) => (
+                  <div key={field} className="space-y-2">
+                    <label className="text-white text-base font-normal capitalize">
+                      {field === "role" ? "Cargo" : field === "company" ? "Nome da empresa" : field}
+                    </label>
+                    <Input
+                      name={field}
+                      type={field === "email" ? "email" : "text"}
+                      placeholder={
+                        field === "role"
+                          ? "Seu cargo"
+                          : field === "company"
+                          ? "Nome da empresa"
+                          : `Seu ${field}`
+                      }
+                      value={formData[field as keyof typeof formData]}
+                      onChange={handleInputChange}
+                      className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
+                      required
+                    />
+                  </div>
+                ))}
 
-                <div className="space-y-2">
-                  <label className="text-white text-base font-normal overflow-hidden break-words">
-                    E-mail
-                  </label>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Seu e-mail"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-white text-base font-normal overflow-hidden break-words">
-                    Contato
-                  </label>
-                  <Input
-                    name="contact"
-                    placeholder="(xx) xxxx-xxxx"
-                    value={formData.contact}
-                    onChange={handleInputChange}
-                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-white text-base font-normal overflow-hidden break-words">
-                    Nome da empresa
-                  </label>
-                  <Input
-                    name="company"
-                    placeholder="Nome da empresa"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
-                    required
-                  />
-                </div>
-
-                {/* Novo campo: Cargo */}
-                <div className="space-y-2">
-                  <label className="text-white text-base font-normal overflow-hidden break-words">
-                    Cargo
-                  </label>
-                  <Input
-                    name="role"
-                    placeholder="Seu cargo"
-                    value={formData.role}
-                    onChange={handleInputChange}
-                    className="w-full max-w-full min-w-0 bg-white border border-gray-300 text-gray-800 placeholder-gray-500"
-                    required
-                  />
+                <div className="flex justify-center">
+                  <Button
+                    type="submit"
+                    variant="forms"
+                    className="group font-bold px-6 sm:px-10 md:px-12 py-4 rounded-full text-base text-center"
+                  >
+                    <span className="block sm:hidden">Agendar</span>
+                    <span className="hidden sm:block">Agendar diagnóstico gratuito</span>
+                  </Button>
                 </div>
               </form>
-
-              {/* Botão centralizado abaixo do form */}
-              <div className="flex justify-center">
-                <Button
-                  type="submit"
-                  form="contact-form"
-                  variant="forms"
-                  className="group font-bold px-6 sm:px-10 md:px-12 py-4 rounded-full text-base text-center"
-                >
-                  {/* Mostra só em telas pequenas */}
-                  <span className="block sm:hidden">Agendar</span>
-                  {/* Mostra do sm pra cima */}
-                  <span className="hidden sm:block">
-                    Agendar diagnóstico gratuito
-                  </span>
-                </Button>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Contact Information Section */}
+      {/* Contact Info */}
       <div className="bg-logistics-bg py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
-            {/* Contact Info */}
             <div className="space-y-6">
               <h3 className="text-white text-lg font-bold">Entre em contato</h3>
               <div className="space-y-4">
@@ -191,20 +151,15 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-6 h-6 text-primary flex-shrink-0" />
-                  <span className="text-white text-base">
-                    +55 (81) 99133-0615
-                  </span>
+                  <span className="text-white text-base">+55 (81) 99133-0615</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-4 text-primary flex-shrink-0" />
-                  <span className="text-white text-base">
-                    contato@fhdataanalysis.com.br
-                  </span>
+                  <span className="text-white text-base">contato@fhdataanalysis.com.br</span>
                 </div>
               </div>
             </div>
 
-            {/* Navigation Links */}
             <div className="space-y-6">
               <h3 className="text-white text-lg font-bold">Páginas</h3>
               <div className="flex flex-col space-y-4">
@@ -222,67 +177,29 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social Media */}
-            {/* Social Media & Support */}
             <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  Redes Sociais
-                </h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://www.instagram.com/fh.data/"
-                    target="_blank"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Instagram className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/fh-data-analysis"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                  {/* <a
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <PhoneCall className="w-6 h-6" />
-                  </a> */}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  ATENDIMENTO
-                </h4>
-                <div className="flex flex-col space-y-2">
-                  <a
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Terms of Use
-                  </a>
-                  <a
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    FAQ
-                  </a>
-                  <a
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Report Issues
-                  </a>
-                </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">Redes Sociais</h3>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.instagram.com/fh.data/"
+                  target="_blank"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/fh-data-analysis"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright Section */}
+      {/* Copyright */}
       <div className="bg-primary py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-2">

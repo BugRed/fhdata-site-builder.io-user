@@ -1,37 +1,50 @@
-/**
- * About section component - Hero area with main CTA and floating buttons
- * Features: Grid of client logos
- */
 const TrustSection = () => {
   // Array de clientes com logo
   const clients = [
-    { src: "/assets/logo-brose.png", alt: "Cliente 1" },
-    { src: "/assets/logo-suzano.png", alt: "Cliente 10" },
-    { src: "/assets/logo-vibra.png", alt: "Cliente 12" },
-    { src: "/assets/logo-estadao.png", alt: "Cliente 4" },
-    { src: "/assets/logo-fricarne.png", alt: "Cliente 5" },
-    { src: "/assets/logo-grupopq.png", alt: "Cliente 6" },
-    { src: "/assets/logo-hebron.png", alt: "Cliente 7" },
-    { src: "/assets/logo-pgquimica.png", alt: "Cliente 8" },
-    { src: "/assets/logo-pref-recife.png", alt: "Cliente 9" },
-    { src: "/assets/logo-bwa.png", alt: "Cliente 2" },
-    { src: "/assets/logo-usp.png", alt: "Cliente 11" },
-    { src: "/assets/logo-emprel.png", alt: "Cliente 3" },
+    { src: "/assets/logo-brose.png", alt: "Brose" },
+    { src: "/assets/logo-suzano.png", alt: "Suzano" },
+    { src: "/assets/logo-vibra.png", alt: "Vibra" },
+    { src: "/assets/logo-estadao.png", alt: "Estadão" },
+    { src: "/assets/logo-fricarne.png", alt: "Fricarne" },
+    { src: "/assets/logo-grupopq.png", alt: "Grupo PQ" },
+    { src: "/assets/logo-hebron.png", alt: "Hebron" },
+    { src: "/assets/logo-pgquimica.png", alt: "PG Química" },
+    { src: "/assets/logo-pref-recife.png", alt: "Prefeitura do Recife" },
+    { src: "/assets/logo-bwa.png", alt: "BWA" },
+    { src: "/assets/logo-usp.png", alt: "USP" },
+    { src: "/assets/logo-emprel.png", alt: "Emprel" },
   ];
-  /* seria bom aqui o link para a empresa que confia */
+
+  // Define escala personalizada por cliente
+  const getScaleClass = (alt) => {
+    switch (alt) {
+      case "Prefeitura do Recife":
+        return "scale-[1.0] hover:scale-[1.2]";
+      case "Estadão":
+        return "scale-[1.0] hover:scale-[1.2]";
+      case "Grupo PQ":
+        return "scale-[1.0] hover:scale-[1.2]";
+      case "Hebron":
+        return "scale-[1.0] hover:scale-[1.2]";
+      case "BWA":
+        return "scale-[1.0] hover:scale-[1.2]";
+      default:
+        return "scale-[3.5] hover:scale-[3.7]";
+    }
+  };
+
   return (
     <section id="trust" style={{ backgroundColor: "#252525" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-        {/* Trust Section - Grid 4x3 */}
         <div className="text-center">
           <h3 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-foreground mb-8 py-5">
             QUEM CONFIA NA GENTE
           </h3>
           <div
             className="
-            grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 
-            gap-x-6 gap-y-12 items-center opacity-60
-          "
+              grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 
+              gap-x-6 gap-y-12 items-center opacity-60
+            "
           >
             {clients.map((client, index) => (
               <div
@@ -41,7 +54,10 @@ const TrustSection = () => {
                 <img
                   src={client.src}
                   alt={client.alt}
-                  className="h-16 w-auto object-contain transition-transform duration-300 scale-[3.5] hover:scale-[3.7]"
+                  className={`
+                    h-16 w-auto object-contain transition-transform duration-300
+                    ${getScaleClass(client.alt)}
+                  `}
                 />
               </div>
             ))}

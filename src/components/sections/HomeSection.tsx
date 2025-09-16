@@ -64,7 +64,7 @@ const HomeSection = () => {
                 className="animate-fade-in shadow-lg w-full justify-start"
                 style={{ animationDelay: "0.2s" }}
               >
-                Dados
+                Inovação
               </MagicButton>
 
               <MagicButton
@@ -73,7 +73,7 @@ const HomeSection = () => {
                 className="animate-fade-in shadow-lg w-full justify-start"
                 style={{ animationDelay: "0.4s" }}
               >
-                Inteligência Artificial
+                Gestão de Dados
               </MagicButton>
 
               <MagicButton
@@ -91,7 +91,7 @@ const HomeSection = () => {
                 className="animate-fade-in shadow-lg w-full justify-start"
                 style={{ animationDelay: "0.6s" }}
               >
-                Gestão de Dados
+                Inteligência Artificial
               </MagicButton>
             </div>
           </div>

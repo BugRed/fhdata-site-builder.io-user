@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lightbulb, Database, TrendingUp, Brain } from "lucide-react";
 import { MagicButton } from "../ui/magicbutton";
 import { Link } from "react-scroll";
 
@@ -12,7 +12,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-20px)] bg-background -mt-[122px] pt-[122px] py-16"
+      className="relative min-h-[calc(100vh-20px)] bg-background -mt-[122px] pt-[122px] py-7"
     >
       {/* Background Image with Overlay */}
       <div
@@ -84,48 +84,73 @@ const HomeSection = () => {
               >
                 Analytics
               </MagicButton>
-            </div>
-          </div>
 
-          {/* Right Column - Floating Buttons com Alinhamento Alternado (apenas em telas grandes) */}
-          {/* Mantém todas as configurações originais, mas centraliza os botões próximos */}
-          {/* Alinhado verticalmente com o H1 */}
-          <div className="hidden lg:flex flex-col justify-between gap-6 lg:items-center lg:pr-0 xl:pr-20 2xl:pr-0 mt-0 lg:col-span-1">
-            {/* Primeira linha - 'Dados' alinhado à esquerda - altura inicial do H1 */}
-            <div className="flex justify-start w-full max-w-[90vw] sm:max-w-xs">
               <MagicButton
                 variant="floating"
                 side="left"
-                className="animate-fade-in shadow-lg"
-                style={{ animationDelay: "0.2s" }}
+                className="animate-fade-in shadow-lg w-full justify-start"
+                style={{ animationDelay: "0.6s" }}
               >
-                Dados
+                Gestão de Dados
+              </MagicButton>
+            </div>
+          </div>
+
+          {/* Right Column - Floating Buttons reorganizados em formato de escada */}
+          <div className="hidden lg:flex flex-col justify-start items-center lg:pr-0 xl:pr-20 2xl:pr-0 mt-0 lg:col-span-1 relative">
+            
+            {/* Primeiro botão - Inovação no meio e em cima */}
+            <div className="flex justify-center w-full ml-96 mt-24">
+              <MagicButton
+                variant="floating"
+                side="left"
+                className="animate-fade-in shadow-lg text-[#B8C1BF] border-[#B8C1BF]"
+                style={{ animationDelay: "0.2s" }}
+                icon={<Lightbulb className="w-[14px] h-[14px] text-primary fill-current" />}
+              >
+                Inovação
               </MagicButton>
             </div>
 
-            {/* Segunda linha - 'Inteligência Artificial' alinhado à direita - meio do H1 */}
-            <div className="flex justify-end w-80">
+            {/* Segunda linha - Gestão de Dados à esquerda, um pouco acima */}
+            <div className="flex justify-start w-full mt-16 ml-16">
+              <MagicButton
+                variant="floating"
+                side="left"
+                className="animate-fade-in shadow-lg text-[#B8C1BF] border-[#B8C1BF]"
+                style={{ animationDelay: "0.4s" }}
+                icon={<Database className="w-[14px] h-[14px] text-primary fill-current" />}
+              >
+                Gestão de Dados
+              </MagicButton>
+            </div>
+
+            {/* Terceira linha - Analytics à direita, um pouco abaixo */}
+            <div className="flex justify-end w-full mb-6 mt-5 mr-16">
               <MagicButton
                 variant="floating"
                 side="right"
-                className="animate-fade-in shadow-lg"
-                style={{ animationDelay: "0.4s" }}
+                className="animate-fade-in shadow-lg text-[#B8C1BF] border-[#B8C1BF]"
+                style={{ animationDelay: "0.6s" }}
+                icon={<TrendingUp className="w-[14px] h-[14px] text-primary fill-current" />}
+              >
+                Analytics 
+              </MagicButton>
+            </div>
+
+            {/* Quarta linha - Inteligência Artificial à esquerda, um pouco abaixo */}
+            <div className="flex justify-start w-full ml-48">
+              <MagicButton
+                variant="floating"
+                side="left"
+                className="animate-fade-in shadow-lg text-[#B8C1BF] border-[#B8C1BF]"
+                style={{ animationDelay: "0.8s" }}
+                icon={<Brain className="w-[14px] h-[14px] text-primary fill-current" />}
               >
                 Inteligência Artificial
               </MagicButton>
             </div>
-
-            {/* Terceira linha - 'Analytics' alinhado à esquerda - altura final do H1 */}
-            <div className="flex justify-start w-full max-w-[90vw] sm:max-w-xs">
-              <MagicButton
-                variant="floating"
-                side="left"
-                className="animate-fade-in shadow-lg"
-                style={{ animationDelay: "0.6s" }}
-              >
-                Analytics
-              </MagicButton>
-            </div>
+            
           </div>
         </div>
       </div>

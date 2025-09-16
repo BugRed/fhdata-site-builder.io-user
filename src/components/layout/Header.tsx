@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-[#464E4E]/100 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 min-h-[90px]">
+        <div className="flex justify-between items-center py-3 min-h-[60px] lg:min-h-[90px]">
           {/* Left Side: Logo and Navigation */}
           <div className="flex items-center space-x-12">
             {/* Logo */}
@@ -55,7 +55,7 @@ const Header = () => {
                   to={item.to}
                   smooth={true}
                   duration={500}
-                  className="text-[#FAF6E6] hover:text-primary cursor-pointer font-bold text-sm tracking-wide transition-colors"
+                  className="text-[#FAF6E6] hover:text-primary cursor-pointer font-extralight text-sm tracking-wide transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -75,7 +75,7 @@ const Header = () => {
                       placeholder="Procurar..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] font-['Poppins'] text-lg font-normal outline-none border-none"
+                      className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] text-lg font-normal outline-none border-none"
                     />
                   </div>
                   <div className="flex items-center justify-center p-[10px]">
@@ -89,7 +89,7 @@ const Header = () => {
               <Button
                 variant="default"
                 size="sm"
-                className="font-bold px-6 py-3 rounded-full text-center"
+                className="font-extralight px-6 py-3 rounded-full text-center"
               >
                 {/* Texto para telas grandes (>= 960px) */}
                 <span className="hidden lg:inline">

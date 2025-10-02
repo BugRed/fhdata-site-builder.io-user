@@ -61,6 +61,10 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
+
+          {/* Right Side: Search and Contact */}
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-6">
+
           </div>
 
           {/* Search Input with Figma Design - Responsive widths */}
@@ -82,9 +86,6 @@ const Header = () => {
               </div>
             </form>
           </div>
-
-          {/* Right Side: Search and Contact */}
-          <div className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-6">
 
 
             <Link to="contact-form" smooth={true} duration={500}>

@@ -61,32 +61,29 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
+          </div>
 
           {/* Right Side: Search and Contact */}
           <div className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-6">
-
-          </div>
-
-          {/* Search Input with Figma Design - Responsive widths */}
-          <div className="relative">
-            <form onSubmit={handleSearch} className="relative">
-              <div className="flex items-center w-[160px] lg:w-[190px] xl:w-[220px] 2xl:w-[240px] h-[50px] bg-[#03120C] rounded-[32px] shadow-[0_4px_12px_rgba(13,10,44,0.06)]">
-                <div className="flex-1 px-3 lg:px-4">
-                  <input
-                    type="text"
-                    placeholder="Procurar..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] text-base lg:text-lg font-normal outline-none border-none"
-                  />
+            {/* Search Input with Figma Design - Responsive widths */}
+            <div className="relative">
+              <form onSubmit={handleSearch} className="relative">
+                <div className="flex items-center w-[160px] lg:w-[190px] xl:w-[220px] 2xl:w-[240px] h-[50px] bg-[#03120C] rounded-[32px] shadow-[0_4px_12px_rgba(13,10,44,0.06)]">
+                  <div className="flex-1 px-3 lg:px-4">
+                    <input
+                      type="text"
+                      placeholder="Procurar..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] text-base lg:text-lg font-normal outline-none border-none"
+                    />
+                  </div>
+                  <div className="flex items-center justify-center p-[10px]">
+                    <Search className="w-5 h-5 lg:w-6 lg:h-6 text-[#B8C1BF]" />
+                  </div>
                 </div>
-                <div className="flex items-center justify-center p-[10px]">
-                  <Search className="w-5 h-5 lg:w-6 lg:h-6 text-[#B8C1BF]" />
-                </div>
-              </div>
-            </form>
-          </div>
-
+              </form>
+            </div>
 
             <Link to="contact-form" smooth={true} duration={500}>
               <Button

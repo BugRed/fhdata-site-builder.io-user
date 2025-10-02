@@ -8,6 +8,8 @@ import Footer from '@/components/sections/Footer';
 import JornadaSection from '@/components/sections/JornadaSection';
 import TrustSection from '@/components/sections/TrustSection';
 import AboutSection from '@/components/sections/AboutSection';
+import EvolutionSection from '@/components/sections/EvolutionSection';
+
 
 /**
  * Main landing page for FH Data company
@@ -23,12 +25,13 @@ const Index = () => {
       {/* Main content sections */}
       <main>
         <HomeSection/>
+        <AboutSection />
         <JornadaSection />
-        <SolutionsSection />
-        <ProductsSection />
+        <EvolutionSection />
+        {/* <SolutionsSection /> */}
+        {/* <ProductsSection /> */}
         {/* <CasesSection /> */}
         <TrustSection />
-        <AboutSection />
         {/* <TestimonialsSection /> */}
       </main>
       

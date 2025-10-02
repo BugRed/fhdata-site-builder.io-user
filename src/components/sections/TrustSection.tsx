@@ -35,7 +35,7 @@ const TrustSection = () => {
 
   return (
     <section id="trust" style={{ backgroundColor: "#252525" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 pt-16">
         <div className="text-center">
           <h3 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-foreground mb-8 py-5">
             QUEM CONFIA NA GENTE

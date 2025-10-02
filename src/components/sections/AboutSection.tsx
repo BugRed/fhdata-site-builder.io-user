@@ -1,6 +1,3 @@
-import { Link } from "react-scroll";
-import { Button } from "../ui/button";
-
 const AboutSection = () => {
   return (
     <section id="about" className="bg-background py-8">

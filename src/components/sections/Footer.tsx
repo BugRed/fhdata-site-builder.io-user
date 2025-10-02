@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background relative">
+    <footer className="bg-background relative py-10" id="contact-form">
       {/* Popup */}
       {popup && (
         <div
@@ -97,11 +97,10 @@ const Footer = () => {
 
       {/* Contact Form Section */}
       <div
-        id="contact-form"
+        
         className="relative py-20 rounded-3xl mx-4 sm:mx-6 lg:mx-8 mb-16 overflow-hidden"
         style={{
-          backgroundImage:
-            "url('https://api.builder.io/api/v1/image/assets/TEMP/88269a69ae6a8a4b86d7acd817252d4279b94f3a?width=2432')",
+          backgroundImage:`url('/img/flash.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -265,7 +264,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="bg-primary py-6">
+      <div className="bg-[#2AC59E] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-2">
             <Copyright className="w-6 h-6 text-white" />

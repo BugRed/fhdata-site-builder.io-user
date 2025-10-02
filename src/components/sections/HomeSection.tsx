@@ -18,8 +18,7 @@ const HomeSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://api.builder.io/api/v1/image/assets/TEMP/0079fe7d6747303bf0250fa3ac55e8097136dfd5?width=2880')",
+          backgroundImage:`url('/img/world.png')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-gray-500/20 via-transparent to-background"></div>

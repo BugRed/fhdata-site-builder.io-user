@@ -59,7 +59,7 @@ const JornadaSection = () => {
           Descubra onde sua empresa está hoje e como pode evoluir para se tornar uma organização verdadeiramente orientada por dados e IA.
         </p>
 
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12 md:mb-16 md:grid-cols-2 xl:grid-cols-12">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12 md:mb-16 md:grid-cols-2 xl:grid-cols-12 justify-items-center md:justify-items-stretch">
           <div className="order-1 md:col-span-1 xl:col-span-4 xl:col-start-1">
             <MaturityCard {...maturityLevels[0]} />
           </div>

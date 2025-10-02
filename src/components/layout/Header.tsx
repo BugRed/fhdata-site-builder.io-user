@@ -64,22 +64,22 @@ const Header = () => {
           </div>
 
           {/* Right Side: Search and Contact */}
-          <div className="hidden md:flex items-center space-x-8">
-            {/* Search Input with Figma Design */}
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-6">
+            {/* Search Input with Figma Design - Responsive widths */}
             <div className="relative">
               <form onSubmit={handleSearch} className="relative">
-                <div className="flex items-center w-[303px] h-[50px] bg-[#03120C] rounded-[32px] shadow-[0_4px_12px_rgba(13,10,44,0.06)]">
-                  <div className="flex-1 px-4">
+                <div className="flex items-center w-[160px] lg:w-[190px] xl:w-[220px] 2xl:w-[240px] h-[50px] bg-[#03120C] rounded-[32px] shadow-[0_4px_12px_rgba(13,10,44,0.06)]">
+                  <div className="flex-1 px-3 lg:px-4">
                     <input
                       type="text"
                       placeholder="Procurar..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] text-lg font-normal outline-none border-none"
+                      className="w-full bg-transparent text-[#B8C1BF] placeholder-[#B8C1BF] text-base lg:text-lg font-normal outline-none border-none"
                     />
                   </div>
                   <div className="flex items-center justify-center p-[10px]">
-                    <Search className="w-6 h-6 text-[#B8C1BF]" />
+                    <Search className="w-5 h-5 lg:w-6 lg:h-6 text-[#B8C1BF]" />
                   </div>
                 </div>
               </form>
@@ -89,18 +89,18 @@ const Header = () => {
               <Button
                 variant="default"
                 size="sm"
-                className="font-extralight px-6 py-3 rounded-full text-center"
+                className="font-extralight px-4 lg:px-5 xl:px-6 py-3 rounded-full text-center text-sm lg:text-base whitespace-nowrap"
               >
-                {/* Texto para telas grandes (>= 960px) */}
-                <span className="hidden lg:inline">
+                {/* Texto para telas grandes (>= 1280px) */}
+                <span className="hidden xl:inline">
                   Entre em contato
                 </span>
 
-                {/* Texto para telas entre 760px e 959px */}
-                <span className="hidden md:inline lg:hidden">Contato</span>
+                {/* Texto para telas entre 1024px e 1279px */}
+                <span className="hidden lg:inline xl:hidden">Contato</span>
 
-                {/* Texto para telas pequenas (< 760px) */}
-                <span className="inline md:hidden">Contato</span>
+                {/* Texto para telas médias (< 1024px) */}
+                <span className="inline lg:hidden">Contato</span>
               </Button>
             </Link>
           </div>

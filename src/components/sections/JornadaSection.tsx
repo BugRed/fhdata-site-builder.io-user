@@ -1,89 +1,81 @@
-import { Link } from "react-scroll";
-import { Button } from "../ui/button";
-/**
- * About section component - Hero area with main CTA and floating buttons
- * Features: Two-column layout, hero text, floating action buttons
- */
+import MaturityCard from "../ui/MaturityCard";
+
 const JornadaSection = () => {
+  const maturityLevels = [
+    {
+      number: 1,
+      title: "Start",
+      description: "Primeiros passos com dados (dashboards básicos, estruturação inicial)."
+    },
+    {
+      number: 2,
+      title: "Grow",
+      description: "Crescimento no uso de BI e automação de análises."
+    },
+    {
+      number: 3,
+      title: "Smart",
+      description: "Inteligência aplicada, insights mais profundos."
+    },
+    {
+      number: 4,
+      title: "Predict",
+      description: "Modelos preditivos e machine learning."
+    },
+    {
+      number: 5,
+      title: "Global AI",
+      description: "IA no DNA do negócio, impacto transformacional."
+    }
+  ];
+
   return (
-    <section id="jorney" className="bg-background">
-      <div
-        className="container px-4 sm:px-6 lg:px-8 border rounded-3xl overflow-hidden
-             mt-0 mb-10
-             pt-10 pb-16
-             max-md:mt-10 max-md:mb-10 max-md:px-6 max-md:py-10"
-      >
-        {/* About Section */}
-        <div className="text-center space-y-6">
-          <h2 className="text-[clamp(1rem,4vw,2rem)] font-medium text-foreground overflow-hidden break-words">
-            ALAVANQUE SEU NEGÓCIO
-          </h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 mt-12">
-            {/* Coluna 1 */}
-            <div className="space-y-3 text-left relative">
-              {/* Esfera com número */}
-              <div className="flex justify-center mb-4">
-                <div className="w-12 h-12 bg-primary-dark rounded-full flex items-center justify-center">
-                  <span className="text-creme font-bold text-lg">1</span>
-                </div>
-              </div>
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
-                Inicio da jornada em dados & IA
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                O primeiro passo para sair do escuro e começar a operar com
-                inteligência de dados real.
-              </p>
-            </div>
-
-            {/* Coluna 2 */}
-            <div className="space-y-3 text-left relative">
-              {/* Esfera com número */}
-              <div className="flex justify-center mb-4">
-                <div className="w-12 h-12 bg-primary-dark rounded-full flex items-center justify-center">
-                  <span className="text-creme font-bold text-lg">2</span>
-                </div>
-              </div>
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
-                Alavancagem com uso de dados & IA
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                Escalar resultados sem aumentar custo operacional.
-              </p>
-            </div>
-
-            {/* Coluna 3 */}
-            <div className="space-y-3 text-left relative">
-              {/* Esfera com número */}
-              <div className="flex justify-center mb-4">
-                <div className="w-12 h-12 bg-primary-dark rounded-full flex items-center justify-center">
-                  <span className="text-creme font-bold text-lg">3</span>
-                </div>
-              </div>
-              <h3 className="text-[clamp(1rem,4vw,1.25rem)] font-bold text-white overflow-hidden break-words">
-                IA no DNA da Empresa
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-[clamp(0.75rem,2.5vw,1rem)] overflow-hidden break-words">
-                Inteligência de dados como parte do DNA da empresa e vantagem
-                competitiva definitiva.
-              </p>
-            </div>
+    <section id="jorney" className="bg-[#0B0A0A] py-8 sm:py-12 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1440px]">
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 bg-[#FAF6E6] rounded-[10px]">
+            <svg 
+              className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path 
+                d="M3 18V17H8.664V11.5H14.327V6H21V7H15.337V12.5H9.673V18H3Z" 
+                fill="#14AE5C"
+              />
+            </svg>
+            <span className="text-[#252525] font-poppins text-sm sm:text-base font-normal leading-[150%]">
+              Jornada de Crescimento
+            </span>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center mb-10">
-        <Link to="contact-form" smooth={true} duration={500}>
-          <Button
-            variant="default"
-            size="sm"
-            className="font-extralight px-6 py-3 rounded-full overflow-hidden break-words text-center"
-          >
-            {/* Texto para telas médias/grandes */}
-            <span className="hidden sm:inline">Solicite um diagnóstico gratuito</span>
-            {/* Texto curto para telas pequenas */}
-            <span className="inline sm:hidden">Solicitar</span>
-          </Button>
-        </Link>
+
+        <h2 className="text-white text-center font-poppins text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-[120%] tracking-[-0.72px] mb-4 sm:mb-6">
+          5 NÍVEIS DE MATURIDADE EM DADOS
+        </h2>
+
+        <p className="text-[#B8C1BF] text-center font-poppins text-sm sm:text-base md:text-lg leading-[150%] max-w-[630px] mx-auto mb-8 sm:mb-12 md:mb-16 px-4">
+          Descubra onde sua empresa está hoje e como pode evoluir para se tornar uma organização verdadeiramente orientada por dados e IA.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12">
+          <div className="order-1">
+            <MaturityCard {...maturityLevels[0]} />
+          </div>
+          <div className="order-2">
+            <MaturityCard {...maturityLevels[1]} />
+          </div>
+          <div className="order-3">
+            <MaturityCard {...maturityLevels[2]} />
+          </div>
+          <div className="order-4 sm:col-start-1 lg:col-start-2">
+            <MaturityCard {...maturityLevels[3]} />
+          </div>
+          <div className="order-5 sm:col-start-2 lg:col-start-3">
+            <MaturityCard {...maturityLevels[4]} />
+          </div>
+        </div>
       </div>
     </section>
   );

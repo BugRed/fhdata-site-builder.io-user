@@ -154,10 +154,10 @@ const Footer = () => {
                   <Button
                     type="submit"
                     variant="forms"
-                    className="group font-bold px-6 sm:px-10 md:px-12 py-4 rounded-full text-base text-center"
+                    className="group font-bold px-4 py-3 text-sm rounded-full text-center min-[680px]:px-6 min-[680px]:py-3.5 min-[930px]:px-12 min-[930px]:py-4 min-[930px]:text-base"
                   >
-                    <span className="block sm:hidden">Agendar</span>
-                    <span className="hidden sm:block">
+                    <span className="block min-[930px]:hidden">Agendar</span>
+                    <span className="hidden min-[930px]:block">
                       Agendar diagnóstico gratuito
                     </span>
                   </Button>

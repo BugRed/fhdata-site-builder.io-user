@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background relative py-10" id="contact-form">
+    <footer className="bg-background relative" id="contact-form">
       {/* Popup */}
       {popup && (
         <div

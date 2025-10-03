@@ -30,7 +30,7 @@ const JornadaSection = () => {
   ];
 
   return (
-    <section id="jorney" className="bg-[#0B0A0A] py-8 sm:py-12 md:py-16">
+    <section id="jorney" className="bg-[#0B0A0A] sm:py-12 md:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1440px]">
         <div className="flex justify-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 bg-[#FAF6E6] rounded-[10px]">
